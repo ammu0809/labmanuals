@@ -1,3 +1,702 @@
+COMPUTER GRAPHICS LABORATORY WITH MINI PROJECT                       18CSL67 
+                      
+  
+Dept. of CSE, KVGCE, Sullia 1 
+ 
+ 
+1.Implement Brenham’s line drawing algorithm for all types of slope. 
+Refer:Text-1: Chapter 3.5 
+Refer:Text-2: Chapter 8 
+#include<glut.h> 
+#include<stdio.h> 
+int x1, y1, x2, y2; 
+void draw_pixel(int x, int y) 
+{ 
+ glColor3f(1.0, 0.0, 0.0); 
+ glBegin(GL_POINTS); 
+ glPointSize(2.0); 
+ glVertex2i(x, y); 
+ glEnd(); 
+ glFlush(); 
+} 
+void bresenhams_line_draw(int x1, int y1, int x2, int y2) 
+{ 
+ int x, y; 
+ int dx = x2 - x1; // x difference 
+ int dy = y2 - y1; // y difference 
+ int m = dy / dx; // slope 
+ if (x1 > x2) 
+ { 
+  x = x2; 
+  y = y2; 
+  x2 = x1; 
+ } 
+ else 
+ { 
+  x = x1; 
+  y = y1; 
+ 
+ } 
+ if (m < 1) 
+ { 
+  int decision_parameter = 2 * dy - dx; 
+  draw_pixel(x, y); // plot a point 
+  while (x < x2) // from 1st point to 2nd point 
+  { 
+   if (decision_parameter >= 0) 
+   { 
+    x = x + 1; 
+COMPUTER GRAPHICS LABORATORY WITH MINI PROJECT                       18CSL67 
+                      
+  
+Dept. of CSE, KVGCE, Sullia 2 
+ 
+ 
+    y = y + 1; 
+  decision_parameter = decision_parameter + 2 * dy - 2 * dx * (y + 1 - y); 
+   } 
+   else 
+   { 
+    x = x + 1; 
+    y = y; 
+  decision_parameter = decision_parameter + 2 * dy - 2 * dx * (y - y); 
+   } 
+   draw_pixel(x, y); 
+  } 
+ } 
+ else if (m > 1) 
+ { 
+  int decision_parameter = 2 * dx - dy; 
+  draw_pixel(x, y); 
+  while (y < y2) 
+  { 
+   if (decision_parameter >= 0) 
+   { 
+    x = x + 1; 
+    y = y + 1; 
+  decision_parameter = decision_parameter + 2 * dx - 2 * dy * (x + 1 - x); 
+   } 
+   else 
+   { 
+    y = y + 1; 
+    x = x; 
+  decision_parameter = decision_parameter + 2 * dx - 2 * dy * (x - x); 
+   } 
+   draw_pixel(x, y); 
+  } 
+ } 
+ else if (m == 1) 
+ { 
+  draw_pixel(x, y); 
+  while (x < x2) 
+  { 
+   x = x + 1; 
+   y = y + 1; 
+   draw_pixel(x, y); 
+  } 
+ } 
+COMPUTER GRAPHICS LABORATORY WITH MINI PROJECT                       18CSL67 
+                      
+  
+Dept. of CSE, KVGCE, Sullia 3 
+ 
+ 
+} 
+void init() 
+{ 
+ glClearColor(1, 1, 1, 1); 
+gluOrtho2D(0.0, 500.0, 0.0, 500.0); // left ->0, right ->500, bottom ->0, top ->500 
+} 
+void display() 
+{ 
+ glClear(GL_COLOR_BUFFER_BIT); 
+ bresenhams_line_draw(x1, y1, x2, y2); 
+ glFlush(); 
+} 
+int main(int argc, char** argv) 
+{ 
+ printf("Enter Start Points (x1,y1)\n"); 
+ scanf_s("%d %d", &x1, &y1); // 1st point from user 
+ printf("Enter End Points (x2,y2)\n"); 
+ scanf_s("%d %d", &x2, &y2); // 2nd point from user 
+ glutInit(&argc, argv); // initialize graphics system 
+ glutInitWindowSize(500, 500); // 500 by 500 window size 
+ glutInitWindowPosition(220, 200); // where do you wanna see your window 
+ glutCreateWindow("Bresenham's Line Drawing"); // the title of your window 
+ init(); // initialize the canvas 
+ glutDisplayFunc(display); // call display function 
+ glutMainLoop(); // run forever 
+ return 0; 
+} 
+OUTPUT: 
+} 
+COMPUTER GRAPHICS LABORATORY WITH MINI PROJECT                       18CSL67 
+                      
+  
+Dept. of CSE, KVGCE, Sullia 4 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+COMPUTER GRAPHICS LABORATORY WITH MINI PROJECT                       18CSL67 
+                      
+  
+Dept. of CSE, KVGCE, Sullia 5 
+ 
+ 
+2.Create and rotate a triangle about the origin and a fixed point. 
+Refer: Text-1: Chapter 5-4 
+#include<glut.h> 
+#include<stdio.h> 
+int x, y;  
+int rFlag = 0;// don't rotate initially 
+float th = 0.0; // initial angle 
+float trX = 0.0, trY = 0.0;// initial translation 
+void draw_pixel(float x1, float y1) 
+{ 
+ glPointSize(5.0); 
+ glBegin(GL_POINTS); 
+ glVertex2f(x1, y1); 
+ glEnd(); 
+} 
+void triangle(int x, int y) 
+{ 
+ glColor3f(1, 0, 0); 
+ glBegin(GL_POLYGON); // drawing a Triangle 
+ glVertex2f(x, y); 
+ glVertex2f(x + 400, y + 300); 
+ glVertex2f(x + 300, y + 0); 
+ glEnd(); 
+} 
+void display() 
+{ 
+ glClear(GL_COLOR_BUFFER_BIT); 
+ glLoadIdentity(); 
+ glColor3f(1, 1, 1); // mark origin point as white dot 
+ draw_pixel(0, 0); // plot origin - white colour 
+ if (rFlag == 1) //Rotate Around origin 
+ { 
+  trX = 0.0; // no translation for rotation around origin 
+  trY = 0.0; 
+  th += 0.1; // the amount of rotation angle 
+ } 
+ if (rFlag == 2) //Rotate Around Fixed Point 
+ { 
+  trX = x;// SET the translation to wherever the user says 
+  trY = y;  
+  th += 0.1; // the amount of rotation angle 
+  glColor3f(0, 0, 1);// mark the user coordinate as blue dot 
+  draw_pixel(x, y);// plot the user coordinate - blue colour 
+COMPUTER GRAPHICS LABORATORY WITH MINI PROJECT                       18CSL67 
+                      
+  
+Dept. of CSE, KVGCE, Sullia 6 
+ 
+ 
+ } 
+ glTranslatef(trX, trY, 0.0);// ACTUAL translation +ve 
+ glRotatef(th, 0.0, 0.0, 1.0);// rotate 
+ glTranslatef(-trX, -trY, 0.0);// ACTUAL translation -ve 
+ triangle(trX,trY); // what to rotate ? – TRIANGLE boss 
+ glutPostRedisplay(); // call display function again and again 
+ glutSwapBuffers();// show the output 
+} 
+void myInit() 
+{ 
+ glClearColor(0.0, 0.0, 0.0, 1.0); 
+ glMatrixMode(GL_PROJECTION); 
+ glLoadIdentity(); 
+ gluOrtho2D(-500.0, 500.0, -500.0, 500.0); 
+ glMatrixMode(GL_MODELVIEW); 
+} 
+void rotateMenu(int option) 
+{ 
+ if (option == 1) 
+  rFlag = 1;  
+ if (option == 2) 
+  rFlag = 2;  
+ if (option == 3) 
+  rFlag = 3; 
+} 
+void main(int argc, char** argv) 
+{ 
+ printf("Enter Fixed Points (x,y) for Roration: \n"); 
+ scanf_s("%d %d", &x, &y); 
+ glutInit(&argc, argv); 
+ glutInitDisplayMode(GLUT_DOUBLE | GLUT_RGB); 
+ glutInitWindowSize(500, 500); 
+ glutInitWindowPosition(0, 0); 
+ glutCreateWindow("Create and Rotate Triangle"); 
+ myInit(); 
+ glutDisplayFunc(display); 
+ glutCreateMenu(rotateMenu); 
+ glutAddMenuEntry("Rotate around ORIGIN", 1); 
+ glutAddMenuEntry("Rotate around FIXED POINT", 2); 
+ glutAddMenuEntry("Stop Rotation", 3); 
+ glutAttachMenu(GLUT_RIGHT_BUTTON); 
+ glutMainLoop(); // run forever 
+} 
+COMPUTER GRAPHICS LABORATORY WITH MINI
+ PROJECT
+ 18CSL
+ 67
+ OUTPUT:
+ Dept. of CSE, KVGCE, Sullia
+ 7
+COMPUTER GRAPHICS LABORATORY WITH MINI PROJECT                       18CSL67 
+                      
+  
+Dept. of CSE, KVGCE, Sullia 8 
+ 
+ 
+3.Draw a colour cube and spin it using OpenGL transformation matrices. 
+Refer:Text-2: Modelling a Coloured Cube 
+ 
+#include <stdlib.h> 
+#include <glut.h> 
+GLfloat vertices[][3] = { 
+       {-1.0,-1.0,-1.0}, 
+       { 1.0,-1.0,-1.0}, 
+       { 1.0, 1.0,-1.0}, 
+       {-1.0, 1.0,-1.0}, 
+ 
+       {-1.0,-1.0, 1.0}, 
+       { 1.0,-1.0, 1.0}, 
+       { 1.0, 1.0, 1.0}, 
+       {-1.0, 1.0, 1.0} 
+}; 
+//cube vertices 
+GLfloat colors[][3] = { 
+      {0.0,0.0,0.0}, 
+      {1.0,0.0,0.0}, 
+      {1.0,1.0,0.0}, 
+      {0.0,1.0,0.0}, 
+ 
+      {0.0,0.0,1.0}, 
+      {1.0,0.0,1.0}, 
+      {1.0,1.0,1.0}, 
+      { 0.0,1.0,1.0 } 
+}; 
+ 
+void face(int a, int b, int c, int d) 
+{ 
+ glBegin(GL_POLYGON); 
+ glColor3fv(colors[a]); 
+ glVertex3fv(vertices[a]); 
+ 
+ glColor3fv(colors[b]); 
+ glVertex3fv(vertices[b]); 
+ 
+ glColor3fv(colors[c]); 
+ glVertex3fv(vertices[c]); 
+ 
+ glColor3fv(colors[d]); 
+ glVertex3fv(vertices[d]); 
+COMPUTER GRAPHICS LABORATORY WITH MINI PROJECT                       18CSL67 
+                      
+  
+Dept. of CSE, KVGCE, Sullia 9 
+ 
+ 
+ glEnd(); 
+} 
+void colorcube(void) 
+{ 
+ face(4, 5, 6, 7);//front face 
+ face(0, 1, 2, 3); //back 
+ face(0, 4, 7, 3);//left 
+ face(1, 2, 6, 5);//right 
+ face(2, 3, 7, 6);//top 
+ face(0, 4, 5, 1);//bottom 
+} 
+GLfloat theta[] = { 0.0,0.0,0.0 }; 
+GLint axis = 2; 
+void display(void) 
+{ 
+ glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT); 
+ glLoadIdentity(); 
+ glRotatef(theta[0], 1.0, 0.0, 0.0); 
+ glRotatef(theta[1], 0.0, 1.0, 0.0); 
+ glRotatef(theta[2], 0.0, 0.0, 1.0); 
+ colorcube(); 
+ glutSwapBuffers(); 
+} 
+void spinCube() 
+{ 
+ theta[axis] += 0.15; 
+ if (theta[axis] > 360.0) theta[axis] -= 360.0; 
+ glutPostRedisplay(); 
+} 
+void mouse(int btn, int state, int x, int y) 
+{ 
+ if (btn == GLUT_LEFT_BUTTON && state == GLUT_DOWN) 
+  axis = 0; 
+ if (btn == GLUT_MIDDLE_BUTTON && state == GLUT_DOWN) 
+  axis = 1; 
+ if (btn == GLUT_RIGHT_BUTTON && state == GLUT_DOWN) 
+  axis = 2; 
+} 
+void myReshape(int w, int h) 
+{ 
+ glViewport(0, 0, w, h); 
+ glMatrixMode(GL_PROJECTION); 
+ glLoadIdentity(); 
+COMPUTER GRAPHICS LABORATORY WITH MINI PROJECT                       18CSL67 
+                      
+  
+Dept. of CSE, KVGCE, Sullia 10 
+ 
+ 
+ if (w <= h) 
+  glOrtho(-2.0, 2.0, -2.0 * (GLfloat)h / (GLfloat)w, 2.0 * (GLfloat)h / 
+(GLfloat)w, -10.0, 10.0); 
+ else 
+  glOrtho(-2.0 * (GLfloat)w / (GLfloat)h, 2.0 * (GLfloat)w / (GLfloat)h, 
+2.0, 2.0, -10.0, 10.0); 
+ glMatrixMode(GL_MODELVIEW); 
+} 
+void MyInit() 
+{ 
+ glClearColor(0, 0, 0, 1); 
+ glEnable(GL_DEPTH_TEST);//enable z buffer to view back buffer 
+} 
+void main(int argc, char** argv) 
+{ 
+ glutInit(&argc, argv); 
+ glutInitDisplayMode(GLUT_DOUBLE | GLUT_RGB | GLUT_DEPTH); 
+ glutInitWindowSize(500, 500); 
+ glutCreateWindow("spining colorcube"); 
+ MyInit(); 
+ glutReshapeFunc(myReshape); 
+ glutDisplayFunc(display); 
+ glutIdleFunc(spinCube); 
+ glutMouseFunc(mouse); 
+ glutMainLoop(); 
+} 
+OUTPUT: 
+COMPUTER GRAPHICS LABORATORY WITH MINI
+ PROJECT
+ 18CSL
+ 67
+ Dept. of CSE, KVGCE, Sullia
+ 11
+COMPUTER GRAPHICS LABORATORY WITH MINI PROJECT                       18CSL67 
+                      
+  
+Dept. of CSE, KVGCE, Sullia 12 
+ 
+ 
+4. Draw a color cube and allow the user to move the camera suitably to experiment 
+with perspective viewing. 
+Refer:Text-2: Topic: Positioning of Camera 
+#include <stdlib.h> 
+#include <glut.h> 
+static GLdouble viewer[] = { 0.0,0.0,5.0 }; 
+GLfloat vertices[][3] = { 
+       {-1.0,-1.0,-1.0}, 
+       { 1.0,-1.0,-1.0}, 
+       { 1.0, 1.0,-1.0}, 
+       {-1.0, 1.0,-1.0}, 
+ 
+       {-1.0,-1.0, 1.0}, 
+       { 1.0,-1.0, 1.0}, 
+       { 1.0, 1.0, 1.0}, 
+       {-1.0, 1.0, 1.0} 
+}; 
+//cube vertices 
+ 
+GLfloat colors[][3] = { 
+      {0.0,0.0,0.0}, 
+      {1.0,0.0,0.0}, 
+      {1.0,1.0,0.0}, 
+      {0.0,1.0,0.0}, 
+ 
+      {0.0,0.0,1.0}, 
+      {1.0,0.0,1.0}, 
+      {1.0,1.0,1.0}, 
+      { 0.0,1.0,1.0 } 
+}; 
+ 
+void face(int a, int b, int c, int d) 
+{ 
+ glBegin(GL_POLYGON); 
+ //glColor3fv(colors[a]); 
+ 
+ glVertex3fv(vertices[a]); 
+ //glColor3fv(colors[b]); 
+ 
+ glVertex3fv(vertices[b]); 
+ //glColor3fv(colors[c]); 
+ 
+ glVertex3fv(vertices[c]); 
+COMPUTER GRAPHICS LABORATORY WITH MINI PROJECT                       18CSL67 
+                      
+  
+Dept. of CSE, KVGCE, Sullia 13 
+ 
+ 
+ //glColor3fv(colors[d]); 
+ 
+ glVertex3fv(vertices[d]); 
+ glEnd(); 
+} 
+void colorcube(void) 
+{ 
+ glColor3f(1.0, 0.0, 0.0); 
+ face(4, 5, 6, 7);//front 
+ 
+ glColor3f(0.0, 1.0, 0.0); 
+ face(0, 3, 2, 1);//back 
+ 
+ glColor3f(1.0, 1.0, 0.0); 
+ face(0, 4, 7, 3);//left 
+ 
+ glColor3f(0.0, 0.0, 1.0); 
+ face(5, 4, 0, 1);//bottom 
+ 
+ glColor3f(0.0, 1.0, 1.0); 
+ face(2, 3, 7, 6);//top 
+ glColor3f(1.0, 0.0, 1.0); 
+ face(1, 2, 6, 5);//right 
+} 
+void display(void) 
+{ 
+ glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT); 
+ glLoadIdentity(); 
+ gluLookAt(viewer[0], viewer[1], viewer[2], 0.0, 0.0, 0.0, 0.0, 1.0, 0.0); 
+ colorcube(); 
+ glutSwapBuffers(); 
+} 
+void keys(unsigned char key, int x, int y) 
+{ 
+ if (key == 'x')viewer[0] -= 1.0; 
+ if (key == 'X')viewer[0] += 1.0; 
+ if (key == 'y')viewer[1] -= 1.0; 
+ if (key == 'Y')viewer[1] += 1.0; 
+ if (key == 'z')viewer[2] -= 1.0; 
+ if (key == 'Z')viewer[2] += 1.0; 
+ glutPostRedisplay(); 
+} 
+void myReshape(int w, int h) 
+COMPUTER GRAPHICS LABORATORY WITH MINI PROJECT                       18CSL67 
+                      
+  
+Dept. of CSE, KVGCE, Sullia 14 
+ 
+ 
+{ 
+ glViewport(0, 0, w, h); 
+ glMatrixMode(GL_PROJECTION); 
+ glLoadIdentity(); 
+ if (w <= h) 
+  glFrustum(-2.0, 2.0, -2.0 * (GLfloat)h / (GLfloat)w, 2.0 * (GLfloat)h / 
+(GLfloat)w, 2.0, 20.0); 
+ else 
+  glFrustum(-2.0, 2.0, -2.0 * (GLfloat)w / (GLfloat)h, 2.0 * (GLfloat)w / 
+(GLfloat)h, 2.0, 20.0); 
+ glMatrixMode(GL_MODELVIEW); 
+} 
+void MyInit() 
+{ 
+ glClearColor(0, 0, 0, 1); 
+ glEnable(GL_DEPTH_TEST);//enable z buffer to view back buffer 
+} 
+void main(int argc, char** argv) 
+{ 
+ glutInit(&argc, argv); 
+ glutInitDisplayMode(GLUT_DOUBLE | GLUT_RGB | GLUT_DEPTH); 
+ glutInitWindowSize(500, 500); 
+ glutCreateWindow("spining colorcube"); 
+ MyInit(); 
+ glutReshapeFunc(myReshape); 
+ glutDisplayFunc(display); 
+ glutKeyboardFunc(keys); 
+ glutMainLoop(); 
+} 
+ 
+ 
+COMPUTER GRAPHICS LABORATORY WITH MINI
+ PROJECT
+ 18CSL
+ 67
+ Dept. of CSE, KVGCE, Sullia
+ 15
+COMPUTER GRAPHICS LABORATORY WITH MINI PROJECT                       18CSL67 
+                      
+  
+Dept. of CSE, KVGCE, Sullia 16 
+ 
+ 
+5. Clip a lines using Cohen-Sutherland algorithm 
+Refer:Text-1: Chapter 6.7 
+Refer:Text-2: Chapter 8 
+#include<stdio.h> 
+#include<glut.h> 
+GLfloat xmin = -0.5, ymin = -0.5, xmax = 0.5, ymax = 0.5; 
+GLfloat x1 = -0.7, y1 = -0.3, x2 = 0.6, y2 = 0.9; 
+int LEFT = 1, RIGHT = 2, BOTTOM = 4, TOP = 8; 
+int c1, c2; 
+int clip_flag = 0, flag = 1; 
+int get_code(GLfloat x, GLfloat y)//to compute the region code 
+{ 
+ int code = 0; 
+ if (y > ymax) 
+  code = code | TOP; 
+ else if (y < ymin) 
+  code = code | BOTTOM; 
+ if (x > xmax) 
+  code = code | RIGHT; 
+ else if (x < xmin) 
+  code = code | LEFT; 
+ return code; 
+} 
+void clip() 
+{ 
+ int c; 
+ GLfloat x, y; 
+ if (c1) 
+  c = c1; 
+ else 
+  c = c2; 
+ 
+ if (c & LEFT) 
+ { 
+  x = xmin; 
+  y = y1 + (y2 - y1) * ((xmin - x1) / (x2 - x1)); 
+ } 
+ if (c & RIGHT) 
+ { 
+  x = xmax; 
+  y = y1 + (y2 - y1) * ((xmax - x1) / (x2 - x1)); 
+ } 
+ if (c & BOTTOM) 
+COMPUTER GRAPHICS LABORATORY WITH MINI PROJECT                       18CSL67 
+                      
+  
+Dept. of CSE, KVGCE, Sullia 17 
+ 
+ 
+ { 
+  y = ymin; 
+  x = x1 + (x2 - x1) * ((ymin - y1) / (y2 - y1)); 
+ } 
+ if (c & TOP) 
+ { 
+  y = ymax; 
+  x = x1 + (x2 - x1) * ((ymax - y1) / (y2 - y1)); 
+ } 
+ if (c == c1) 
+ { 
+  x1 = x; 
+  y1 = y; 
+ } 
+ else 
+ { 
+  x2 = x; 
+  y2 = y; 
+ } 
+} 
+void display() 
+{ 
+ glClear(GL_COLOR_BUFFER_BIT); 
+ glColor3f(1, 1, 1); 
+ glBegin(GL_LINE_LOOP); 
+ glVertex2f(xmin, ymin); 
+ glVertex2f(xmax, ymin); 
+ glVertex2f(xmax, ymax); 
+ glVertex2f(xmin, ymax); 
+ glEnd(); 
+ glColor3f(1, 1, 0); 
+ if (flag == 1) 
+ { 
+  glBegin(GL_LINES); 
+  glVertex2f(x1, y1); 
+  glVertex2f(x2, y2); 
+  glEnd(); 
+ } 
+ while (1 && clip_flag == 1) 
+ { 
+  c1 = get_code(x1, y1); 
+  c2 = get_code(x2, y2); 
+  if ((c1 | c2) == 0) 
+COMPUTER GRAPHICS LABORATORY WITH MINI PROJECT                       18CSL67 
+                      
+  
+Dept. of CSE, KVGCE, Sullia 18 
+ 
+ 
+   break; 
+  else if ((c1 & c2) != 0) 
+  { 
+   flag = 0; 
+   break; 
+  } 
+  else clip(); 
+ } 
+ glFlush(); 
+} 
+void key(unsigned char ch, int x, int y) 
+{ 
+ clip_flag = 1; 
+ glutPostRedisplay(); 
+} 
+void main(int argc, char** argv) 
+{ 
+ glutInit(&argc, argv); 
+ glutInitWindowSize(500, 500); 
+ glutInitDisplayMode(GLUT_SINGLE | GLUT_RGB); 
+ glutCreateWindow("Cohensutherland line clipping algorithm"); 
+ glutDisplayFunc(display); 
+ glutKeyboardFunc(key); 
+ glutMainLoop(); 
+} 
+OUTPUT: 
+ 
+Press any key 
+COMPUTER GRAPHICS LABORATORY WITH MINI PROJECT                       18CSL67 
+                      
+  
+Dept. of CSE, KVGCE, Sullia 19 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+COMPUTER GRAPHICS LABORATORY WITH MINI PROJECT                       18CSL67 
+                      
+  
+Dept. of CSE, KVGCE, Sullia 20 
+ 
+ 
 6.To draw a simple shaded scene consisting of a tea pot on a table. Define suitably the 
 position and properties of the light source along with the properties of the surfaces of 
 the solid object used in the scene. 
@@ -40,7 +739,14 @@ void light() // set the lighting arrangements
  GLfloat mat_ambient[] = { 1, 1, 1, 1 }; // ambient colour 
  GLfloat mat_diffuse[] = { 0.5, 0.5, 0.5, 1 }; 
  GLfloat mat_specular[] = { 1, 1, 1, 1 }; 
- GLfloat mat_shininess[] = { 50.0f }; // shininess valueglMaterialfv(GL_FRONT, GL_AMBIENT, mat_ambient); 
+ GLfloat mat_shininess[] = { 50.0f }; // shininess value 
+COMPUTER GRAPHICS LABORATORY WITH MINI PROJECT                       18CSL67 
+                      
+  
+Dept. of CSE, KVGCE, Sullia 21 
+ 
+ 
+ glMaterialfv(GL_FRONT, GL_AMBIENT, mat_ambient); 
  glMaterialfv(GL_FRONT, GL_DIFFUSE, mat_diffuse); 
  glMaterialfv(GL_FRONT, GL_SPECULAR, mat_specular); 
  glMaterialfv(GL_FRONT, GL_SHININESS, mat_shininess); 
@@ -83,7 +789,11 @@ int main(int argc, char** argv)
  glutInitDisplayMode(GLUT_SINGLE | GLUT_RGB | GLUT_DEPTH); 
  glutInitWindowSize(500, 500); 
  glutInitWindowPosition(0, 0); 
-glutCreateWindow("Teapot on a table");
+COMPUTER GRAPHICS LABORATORY WITH MINI
+ PROJECT
+ 18CSL
+ 67
+ glutCreateWindow("Teapot on a table");
  init();
  glutDisplayFunc(display);
  glEnable(GL_LIGHTING); // enable
@@ -96,9 +806,15 @@ glutCreateWindow("Teapot on a table");
  glEnable(GL_DEPTH_TEST); // do depth comparisons and update the depth buffer.
  glutMainLoop();
  }
-
-
-
+ OUTPUT:
+ Dept. of CSE, KVGCE, Sullia
+ 22
+COMPUTER GRAPHICS LABORATORY WITH MINI PROJECT                       18CSL67 
+                      
+  
+Dept. of CSE, KVGCE, Sullia 23 
+ 
+ 
 7.Design, develop and implement recursively subdivide a tetrahedron to form 3D 
 sierpinski gasket. The number of recursive steps is to be specified by the user. 
 Refer: Text-2: Topic: sierpinski gasket. 
@@ -142,7 +858,13 @@ void tetrahedron(int m)
 { 
  glColor3f(1.0, 0.0, 0.0); 
  divide_triangle(v[0], v[1], v[2], m); 
-glColor3f(0.0, 1.0, 0.0); 
+COMPUTER GRAPHICS LABORATORY WITH MINI PROJECT                       18CSL67 
+                      
+  
+Dept. of CSE, KVGCE, Sullia 24 
+ 
+ 
+ glColor3f(0.0, 1.0, 0.0); 
  divide_triangle(v[3], v[2], v[1], m); 
  glColor3f(0.0, 0.0, 1.0); 
  divide_triangle(v[0], v[3], v[1], m); 
@@ -183,10 +905,21 @@ int main(int argc, char** argv)
  glClearColor(1.0, 1.0, 1.0, 1.0); 
  glutMainLoop(); 
 } 
-
-
-
-
+ 
+ 
+COMPUTER GRAPHICS LABORATORY WITH MINI
+ PROJECT
+ 18CSL
+ 67
+ OUTPUT:
+ Dept. of CSE, KVGCE, Sullia
+ 25
+COMPUTER GRAPHICS LABORATORY WITH MINI PROJECT                       18CSL67 
+                      
+  
+Dept. of CSE, KVGCE, Sullia 26 
+ 
+ 
 8.Develop a menu driven program to animate a flag using Bezier Curve algorithm 
 Refer: Text-1: Chapter 8-10 
 #include<stdio.h> 
@@ -230,7 +963,13 @@ void bezier(point* pt1, int cPt, int bPt)
  c = new int[cPt]; 
  bino(cPt - 1, c); 
  glBegin(GL_LINE_STRIP); 
-for (k = 0; k <= bPt; k++) 
+COMPUTER GRAPHICS LABORATORY WITH MINI PROJECT                       18CSL67 
+                      
+  
+Dept. of CSE, KVGCE, Sullia 27 
+ 
+ 
+ for (k = 0; k <= bPt; k++) 
  { 
   u = float(k) / float(bPt); 
   computebezPt(u, &bcPt, cPt, pt1, c); 
@@ -273,7 +1012,13 @@ void display()
   glTranslatef(0, -0.8, 0); 
   bezier(ctrlPts, nctrlPts, nBcPts); 
  } 
-glColor3f(0, 1, 0); 
+COMPUTER GRAPHICS LABORATORY WITH MINI PROJECT                       18CSL67 
+                      
+  
+Dept. of CSE, KVGCE, Sullia 28 
+ 
+ 
+ glColor3f(0, 1, 0); 
  for (int i = 0; i < 50; i++) 
  { 
   glTranslatef(0, -0.8, 0); 
@@ -307,9 +1052,28 @@ int main(int argc, char** argv)
  glutMainLoop(); 
  return 0; 
 } 
-
-
-
+ 
+ 
+ 
+ 
+ 
+O 
+ 
+ 
+ 
+COMPUTER GRAPHICS LABORATORY WITH MINI
+ PROJECT
+ 18CSL
+ 67
+ OUTPUT:
+ Dept. of CSE, KVGCE, Sullia
+ 29
+COMPUTER GRAPHICS LABORATORY WITH MINI PROJECT                       18CSL67 
+                      
+  
+Dept. of CSE, KVGCE, Sullia 30 
+ 
+ 
 9. Develop a menu driven program to fill the polygon using scan line algorithm 
 #include<stdio.h> 
 #include<glut.h> 
@@ -353,7 +1117,13 @@ void intersection_point(GLint x1, GLint y1, GLint x2, GLint y2)
   y2 = t; 
  } 
  if ((y2 - y1) == 0) 
-M = (x2 - x1); 
+COMPUTER GRAPHICS LABORATORY WITH MINI PROJECT                       18CSL67 
+                      
+  
+Dept. of CSE, KVGCE, Sullia 31 
+ 
+ 
+  M = (x2 - x1); 
  else 
   M = (x2 - x1) / (y2 - y1); 
  x = x1; 
@@ -396,7 +1166,13 @@ void Draw()
    for (int x = LE[y]; x < RE[y]; x++) 
    { 
     glBegin(GL_POINTS); 
-glVertex2i(x, y); 
+COMPUTER GRAPHICS LABORATORY WITH MINI PROJECT                       18CSL67 
+                      
+  
+Dept. of CSE, KVGCE, Sullia 32 
+ 
+ 
+    glVertex2i(x, y); 
     glEnd(); 
     glFlush(); 
    } 
@@ -416,3 +1192,12 @@ int main(int argc, char** argv)
  glutMainLoop(); 
  return 0; 
 } 
+OUTPUT: 
+ 
+ 
+COMPUTER GRAPHICS LABORATORY WITH MINI
+ PROJECT
+ 18CSL
+ 67
+ Dept. of CSE, KVGCE, Sullia
+ 33
