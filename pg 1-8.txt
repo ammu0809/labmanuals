@@ -1,0 +1,790 @@
+Program-1: Create an application to design a Visiting Card. The Visiting card should have a
+company logo at the top right corner. The company name should be displayed in Capital letters,
+aligned to the center. Information like the name of the employee, job title, phone number,
+address, email, fax and the website address is to be displayed. Insert a horizontal line between
+the job title and the phone number.
+1) Firstly Create an Application by Name “VisitingCardApp”
+2) Go to xml code of design, change the layout to “Constraint Layout”
+3) Add TextView component change the following properties:
+ Size: 38dp
+ Text: JIT
+ Align left top
+4) Add ImageView to design and in type choose “IC_LAUNCHER_FOREGROUND”
+ Download the logo & copy the same in res->drawable folder
+ In xml code of imageview change srcCompat=”@drawable/logo”
+ Align right top
+5) Add View component & change the following properties:
+ Height: 4dp
+ Background: “#4444” (black color)
+6) Add TextView component change the following properties:
+ Size: 20dp
+ Text: Azizkhan F Pathan
+ Style: Bold
+ Align center
+7) Add TextView component change the following properties:
+ Size: 20dp
+ Text: Assistant Professor, Dept. of CS&E
+ Align center
+8) Add TextView component change the following properties:
+ Size: 20dp
+ Text: Address: Bada Cross, Davangere-577003
+ Align: center
+9) Add TextView component change the following properties:
+ Size: 20dp
+ Text: Email: azizkhan@jitd.in
+ Align: center
+10) Add TextView component change the following properties:
+ Size: 20dp
+ Text: Mobile: 8105420597
+JAVA-CODE:
+package com.example.VisitingCardApp;
+import androidx.appcompat.app.AppCompatActivity;
+import android.os.Bundle;
+import com.example.VisitingCardApp.R;
+public class MainActivity extends AppCompatActivity {
+protected void onCreate(Bundle savedInstanceState) {
+super.onCreate(savedInstanceState);
+setContentView(R.layout.activity_main);
+}
+}
+Program-2: Develop an Android application using controls like Button, TextView, EditText for
+designing a calculator having basic functionality like Addition, Subtraction, Multiplication, and
+Division.
+1) Firstly Create an Application by Name “SimpleCalci”
+2) Go to xml code of design change the layout to “Constraint Layout”
+3) Add TextView component & change the following properties:
+ Size: 38dp
+ Text: Simple Calculator
+ Center-Align
+4) Add PlainText (EditText) component & change the following properties in XMLCode:
+ Text: “ ”
+ Hint: “Enter the first number”
+ id: “@+id/editText1”
+5) Add PlainText (EditText) component & change the following properties in XMLCode:
+ Text: “ ”
+ Hint: “Enter the second number”
+ id: “@+id/editText2”
+6) Add TextView component to display result & change the following properties:
+ Size: 40dp
+ Text: “0”
+ Center-Align
+ id: “@+id/textView1”
+7) Add 5 Buttons & rename the four buttons “Add”, “Sub”,”Mul”,“div” and “Clear”
+withfollowing addition:
+ Onclick: “doAdd”(Add Button)
+ Onclick: “doSub”(Sub Button)
+ Onclick: “doMul”(Mul Button)
+ Onclick: “doDiv”(Div Button)
+ Onclick: “clear”(Clear Button)
+JAVA-CODE:
+package com.example.SimpleCalci;
+import androidx.appcompat.app.AppCompatActivity;
+import android.os.Bundle;
+import android.view.View;
+import android.widget.EditText;
+import android.widget.TextView;
+import com.example.simplecalci.R;
+public class MainActivity extends AppCompatActivity {
+ EditText e1,e2;
+ TextView tv1;
+ @Override
+ protected void onCreate(Bundle savedInstanceState) {
+ super.onCreate(savedInstanceState);
+ setContentView(R.layout.activity_main);
+ e1 = (EditText)findViewById(R.id.editText1);
+ e2 = (EditText)findViewById(R.id.editText2);
+ tv1 = findViewById(R.id.textView1);
+ }
+ public void doAdd(View V){
+ int a1 = Integer.parseInt(e1.getText().toString());
+ int a2 = Integer.parseInt(e2.getText().toString());
+ int result= a1+a2;
+ tv1.setText(""+result);
+ }
+ public void doSub(View V){
+ int a1 = Integer.parseInt(e1.getText().toString());
+ int a2 = Integer.parseInt(e2.getText().toString());
+ int result= a1-a2;
+ tv1.setText(""+result);
+ }
+ public void doMul(View V){
+ int a1 = Integer.parseInt(e1.getText().toString());
+ int a2 = Integer.parseInt(e2.getText().toString());
+ int result= a1*a2;
+ tv1.setText(""+result);
+ }
+ public void doDiv(View V){
+ int a1 = Integer.parseInt(e1.getText().toString());
+ int a2 = Integer.parseInt(e2.getText().toString());
+ float result= a1/a2;
+ tv1.setText(""+result);
+ }
+ public void clear(View V)
+ {
+ e1.setText("");
+ e2.setText("");
+ tv1.setText("");
+ }
+}
+Program-3: Create a SIGN Up activity with Username and Password. Validation of password
+should happen based on the following rules:
+ Password should contain uppercase and lowercase letters.
+ Password should contain letters and numbers.
+ Password should contain special characters.
+ Minimum length of the password (the default value is 8).
+On successful SIGN UP proceed to the next Login activity. Here the user should SIGN IN using
+the Username and Password created during signup activity. If the Username and Password are
+matched then navigate to the next activity which displays a message saying “Successful Login”
+or else display a toast message saying “Login Failed”. The user is given only two attempts and
+after that display a toast message saying “Failed Login Attempts” and disable the SIGN IN
+button. Use Bundle to transfer information from one activity to another.
+1) Firstly Create an Application by Name “SignUpActivity”
+2) Go to xml code of design change the layout to “Constraint Layout”
+3) Add TextView component & change the following properties:
+ Size: 38dp
+ Text: “Sign Up”
+ Center-Align
+4) Add Email (EditText) component & change the following properties in XML Code:
+ Hint: “Email ID”
+ id: “@+id/s_etname”
+5) Add Password (EditText) component & change the following properties in XML Code:
+ Hint: “Password”
+ id: “@+id/s_etpword”
+6) Add Button component & change the following properties in XML
+ Id: “@+id/b_signin”
+ Text: “Sign Up”
+JAVA-CODE
+MainActivity.java
+package com.example.SignUpActivity;
+import androidx.appcompat.app.AppCompatActivity;
+import android.content.Intent;
+import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.Toast;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+import com.example.signupactivity.R;
+public class MainActivity extends AppCompatActivity {
+ Button signup;
+ EditText username, password;
+ @Override
+ protected void onCreate(Bundle savedInstanceState) {
+ super.onCreate(savedInstanceState);
+ setContentView(R.layout.activity_main);
+ username = findViewById(R.id.s_etname);
+ password = findViewById(R.id.s_etpword);
+ signup = findViewById(R.id.b_signin);
+ signup.setOnClickListener(new View.OnClickListener() {
+ @Override
+ public void onClick(View view) {
+ if(password.getText().toString().length()>=8
+ &&validatePassword(password.getText().toString())){
+ Toast.makeText(getBaseContext(),"Successful Sign
+ UP",Toast.LENGTH_LONG).show();
+ Intent it = new Intent(getBaseContext(), login.class);
+ Bundle b = new Bundle();
+ b.putString("user",username.getText().toString());
+ b.putString("pass",password.getText().toString());
+ it.putExtras(b);
+startActivity(it);
+ }
+ else{
+ Toast.makeText(getBaseContext(),"not
+ VALID",Toast.LENGTH_LONG).show();
+ }
+ }
+ });
+ }
+ public boolean validatePassword(String password){ Pattern pattern;
+ Matcher matcher;
+ final String PASSWORD_PATTERN = "^(?=.*[0-9])(?=.*[A-Z])(?=.*[a-
+ z])(?=.*[@#$%^&+=!])(?=\\S+$).{8,}$";
+ pattern = Pattern.compile(PASSWORD_PATTERN);
+ matcher = pattern.matcher(password);
+ return matcher.matches();
+ }
+}
+7) Right click on Java folder-> new-> activity->empty activity-> name it as “login”
+8) Go to xml code of design change the layout to “Constraint Layout”
+9) Add TextView component & change the following properties:
+ Size: 38dp
+ Text: “Login”
+ Center-Align
+10) Add Email (EditText) component & change the following properties in XML Code:
+ Hint: “Email ID”
+ id: “@+id/ l_etname”
+11) Add Password (EditText) component & change the following properties in XML Code:
+ Hint: “Password”
+ id: “@+id/ l_etpword”
+12) Add Button component & change the following properties in XML
+ id: “@+id/b_login”
+ Text: “Login”
+login.java
+package com.example.SignUpActivity;
+import android.content.Intent;
+import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.Toast;
+import androidx.appcompat.app.AppCompatActivity;
+import com.example.signupactivity.R;
+public class login extends AppCompatActivity {
+ Button l_login;
+ EditText l_username, l_password;
+ int counter = 2;
+ @Override
+ protected void onCreate(Bundle savedInstanceState) {
+ super.onCreate(savedInstanceState);
+ setContentView(R.layout.activity_login);
+ l_username= findViewById(R.id.l_etname);
+ l_password= findViewById(R.id.l_etpword);
+ l_login= findViewById(R.id.b_login);
+ l_login.setOnClickListener(new View.OnClickListener() {
+ @Override
+ public void onClick(View view) {
+ Bundle b = getIntent().getExtras();
+ String user = b.getString("user");
+ String pass = b.getString("pass");
+ if(user.equals(l_username.getText().toString())
+ && pass.equals(l_password.getText().toString()))
+ {
+ Intent it = new Intent(getBaseContext(), success.class);
+ startActivity(it);
+ }
+ else
+ {
+ Toast.makeText(getBaseContext(),"LOGIN
+ FAILED",Toast.LENGTH_LONG).show();
+ }
+ counter--;
+ if(counter == 0)
+ {
+ Toast.makeText(getBaseContext(),"FAILED LOGIN
+ ATTEMPTS",Toast.LENGTH_LONG).show();
+ l_login.setEnabled(false);
+ }
+ }
+ });
+ }
+}
+13) Right click on Java folder-> new-> activity->empty activity-> name it as “success”
+14) Go to xml code of design change the layout to “Constraint Layout”
+15) Add TextView component & change the following properties:
+ Size: 38dp
+ Text: “Login Successful”
+ Center-Align
+success.java
+package com.example.SignUpActivity;
+import android.os.Bundle;
+import androidx.appcompat.app.AppCompatActivity;
+import com.example.signupactivity.R;
+public class success extends AppCompatActivity {
+ @Override
+ protected void onCreate(Bundle savedInstanceState) {
+ super.onCreate(savedInstanceState);
+ setContentView(R.layout.activity_success);
+ }
+}
+Program-4: Develop an application to set an image as wallpaper. On click of a button, the
+wallpaper image should start to change randomly every 30 seconds.
+1) Firstly Create an Application by Name “WallpaperActivity”
+2) Go to xml code of design change the layout to “Constraint Layout”
+3) Add TextView component & change the following properties:
+ Size: 38dp
+ Text: Wall Paper Change Application
+ Center-Align
+4) Add Button component & change the following properties:
+ Size: 38dp
+ Text: Click Here To Change Wall Paper
+5) Save five images (jpg format) in the drawable folder. In this example one.jpg, two.jpg, three.jpg,
+four.jpg and five.jpg images are saved in drawable folder.
+JAVA-CODE
+MainActivity.java
+package com.example.WallpaperActivity;
+import androidx.appcompat.app.AppCompatActivity;
+import android.app.WallpaperManager;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.graphics.drawable.AnimationDrawable;
+import android.graphics.drawable.BitmapDrawable;
+import android.graphics.drawable.Drawable;
+import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+import android.widget.Toast;
+import java.io.IOException;
+import java.util.Timer;
+import java.util.TimerTask;
+import com.example.wallpaperactivity.R;
+public class MainActivity extends AppCompatActivity {
+ Button changewallpaper;
+ Timer mytimer;
+ Drawable drawable;
+ WallpaperManager wpm;
+ int prev=1;
+ @Override
+ protected void onCreate(Bundle savedInstanceState) {
+ super.onCreate(savedInstanceState);
+ setContentView(R.layout.activity_main);
+ mytimer = new Timer();
+ wpm = WallpaperManager.getInstance(this);
+ changewallpaper = findViewById(R.id.button);
+ changewallpaper.setOnClickListener(new View.OnClickListener() {
+ @Override public void onClick(View view) {
+ setWallpaper();
+ }
+ });
+ }
+ private void setWallpaper() {
+ mytimer.schedule(new TimerTask() {
+ @Override
+ public void run() {
+ if(prev==1) {
+ drawable = getResources().getDrawable(R.drawable.one);
+ prev = 2;
+ }
+ else if(prev==2) {
+ drawable = getResources().getDrawable(R.drawable.two);
+ prev=3;
+ }
+ else if(prev==3) {
+ drawable = getResources().getDrawable(R.drawable.three);
+ prev=4;
+ }
+ else if(prev==4) {
+ drawable = getResources().getDrawable(R.drawable.four);
+ prev=5;
+ }
+ else if(prev==5) {
+ drawable = getResources().getDrawable(R.drawable.five);
+ prev=1;
+ }
+ Bitmap wallpaper = ((BitmapDrawable)drawable).getBitmap();
+ try
+ {
+ wpm.setBitmap(wallpaper);
+ } catch (IOException e) {
+ e.printStackTrace();
+ }
+ }
+ },0,30000);
+ }
+}
+Program-5: Write a program to create an activity with two buttons START and STOP. On
+pressing of the START button, the activity must start the counter by displaying the numbers
+from One and the counter must keep on counting until the STOP button is pressed. Display
+the counter value in a TextViewcontrol.
+1) Firstly Create an Application by Name “CounterActivity”
+2) Go to xml code of design change the layout to “Constraint Layout”
+3) Add TextView component & change the following properties:
+ Size: 38dp
+ Text: “Counter Application”
+ Center-Align
+4) Add TextView component & change the following properties:
+ Text: “Counter Value”
+5) Add Button components & change the following properties:
+ Size: 38dp
+ Text: Start
+ id: “@+id/btn_start”
+6) Add Button components & change the following properties:
+ Size: 38dp
+ Text: Stop
+ id: “@+id/btn_stop”
+JAVA-CODE:
+package com.example.CounterActivity;
+import androidx.appcompat.app.AppCompatActivity;
+import android.os.Bundle;
+import android.os.Handler;
+importandroid.view.View;
+import android.widget.Button;
+import android.widget.TextView;
+import com.example.counteractivity.R;
+public class MainActivity extends AppCompatActivity {
+Button btnstart, btnstop;
+TextView txtcounter;
+int i=1;
+Handler customHandler=new Handler();
+@Override
+protected void onCreate(Bundle savedInstanceState) {
+super.onCreate(savedInstanceState);
+setContentView(R.layout.activity_main);
+btnstart=findViewById(R.id.btn_start);
+btnstop=findViewById(R.id.btn_stop);
+txtcounter=findViewById(R.id.textView);
+btnstart.setOnClickListener(new View.OnClickListener() {
+@Override
+public void onClick(View v) {
+customHandler.postDelayed(updateTimerThread,0);
+}
+});
+btnstop.setOnClickListener(new View.OnClickListener() {
+@Override
+public void onClick(View v) {
+customHandler.removeCallbacks(updateTimerThread);
+}
+});
+}
+private final Runnable updateTimerThread=new Runnable() {
+@Override
+public void run() {
+txtcounter.setText(""+i);
+customHandler.postDelayed(this,1000);
+i++;
+}
+};
+}
+Program-6: Create two files of XML and JSON type with values for City_Name, Latitude,
+Longitude, Temperature, and Humidity. Develop an application to create an activity with two
+buttons to parse the XML and JSON files which when clicked should display the data in their
+respective layouts side by side.
+1) Firstly Create an Application by Name “JsonParser”
+2) Go to xml code of design change the layout to “Constraint Layout”
+3) Add TextView component & change the following properties:
+ Size: 38dp
+ Text: XML and JSON Parser
+ Center-Align
+4) Add Two Buttons to Design & change the name “ParseXml” & “ParseJson” with following
+onclick functions:
+ ParseXml-Button: onClick: parsexml
+ ParseJson-Button: onClick: parsejson
+5) Add TextView component & change the following properties:
+ Id: display
+ Text: “”
+ Align: Center
+6) Add Assets folder by following the given hierarchy:
+ App->new->folder->Assests folder
+7) Inside the assets folder create new files of xml and json using the following hierarchy:
+ new->file->city.xml
+ new->file->city.json
+once created place the following details inside the “city.xml” and “city.json”
+city.xml:
+<?xml version="1.0"?>
+<records>
+<place>
+<name>Davangere</name>
+<lat>14.470</lat>
+<long>75.914</long>
+<temperature>23</temperature>
+<humidity>92%</humidity>
+</place>
+<place>
+<name>Bangalore</name>
+<lat>14.230</lat>
+<long>76.400</long>
+<temperature>22</temperature>
+<humidity>92%</humidity>
+</place>
+</records>
+city.json:
+[
+ {
+"name": "HASSAN",
+ "lat": "12.295",
+ "long": "76.639",
+ "temperature": "22",
+ "humidity": "92%"
+ },
+ {
+ "name": "MANDYA",
+"lat": "12.97165",
+"long": "77.5946",
+"temperature": "25",
+"humidity": "74%"
+ }
+]
+package com.example.jsonparser;
+import androidx.appcompat.app.AppCompatActivity;
+import android.os.Bundle;
+import android.text.style.TabStopSpan;
+import android.view.View;
+import android.widget.TextView;
+import android.widget.Toast;
+import org.json.JSONArray;
+import org.json.JSONObject;
+import org.w3c.dom.Document;
+import org.w3c.dom.Element;
+import org.w3c.dom.Node;
+import org.w3c.dom.NodeList;
+import java.io.InputStream;
+import java.nio.charset.StandardCharsets;
+import javax.xml.parsers.DocumentBuilder;
+import javax.xml.parsers.DocumentBuilderFactory;
+public class MainActivity extends AppCompatActivity {
+ TextView display;
+ @Override
+ protected void onCreate(Bundle savedInstanceState) {
+ super.onCreate(savedInstanceState);
+ setContentView(R.layout.activity_main);
+ display = (TextView)findViewById(R.id.display);
+ }
+ public void parsexml(View V)
+ {
+ try {
+ InputStream is = getAssets().open("city.xml");
+ DocumentBuilderFactory documentBuilderFactory =
+DocumentBuilderFactory.newInstance();
+ DocumentBuilder documentBuilder =
+documentBuilderFactory.newDocumentBuilder();
+ Document document = documentBuilder.parse(is);
+ StringBuilder stringBuilder = new StringBuilder();
+ stringBuilder.append("XML DATA");
+ stringBuilder.append("\n ------------");
+ NodeList nodeList = document.getElementsByTagName("place");
+ for (int i = 0; i < nodeList.getLength(); i++)
+ {
+ Node node = nodeList.item(i);
+ if (node.getNodeType() == Node.ELEMENT_NODE)
+ { Element element = (Element) node;
+ stringBuilder.append("\nName: ").append(getValue("name",
+element));
+ stringBuilder.append("\nLatitude: ").append(getValue("lat",
+element));
+ stringBuilder.append("\nLongitude: ").append(getValue("long",
+element));
+ stringBuilder.append("\nTemperature:
+").append(getValue("temperature", element));
+ stringBuilder.append("\nHumidity:
+").append(getValue("humidity", element));
+ stringBuilder.append("\n ------------ ");
+ }
+ }
+ display.setText(stringBuilder.toString());
+ }catch (Exception e){
+ e.printStackTrace();
+ Toast.makeText(MainActivity.this,"Error Parsing
+XML",Toast.LENGTH_LONG).show();
+ }
+ }
+ public void parsejson(View V){
+ String json;
+ StringBuilder stringBuilder = new StringBuilder();
+ try {
+ InputStream is = getAssets().open("city.json");
+ int size = is.available();
+ byte[] buffer = new byte[size];
+ is.read(buffer);
+ json = new String(buffer, StandardCharsets.UTF_8);
+ JSONArray jsonArray = new JSONArray(json);
+ stringBuilder.append("JSON DATA");
+ stringBuilder.append("\n ---------- ");
+ for (int i = 0; i < jsonArray.length(); i++) {
+ JSONObject jsonObject = jsonArray.getJSONObject(i);
+ stringBuilder.append("\nName:
+").append(jsonObject.getString("name"));
+ stringBuilder.append("\nLatitude:
+").append(jsonObject.getString("lat"));
+ stringBuilder.append("\nLongitude:
+").append(jsonObject.getString("long"));
+ stringBuilder.append("\nTemperature:
+").append(jsonObject.getString("temperature"));
+ stringBuilder.append("\nHumidity:
+").append(jsonObject.getString("humidity"));
+ stringBuilder.append("\n ------------ ");
+ }
+ display.setText(stringBuilder.toString());
+ is.close();
+ }
+ catch (Exception e){
+ e.printStackTrace();
+ Toast.makeText(MainActivity.this,"Error in
+reading",Toast.LENGTH_LONG).show();
+ }
+ }
+ private String getValue(String tag, Element element)
+ {
+ return
+element.getElementsByTagName(tag).item(0).getChildNodes().item(0).getNodeValue();
+ }
+}
+Output:
+Program-7: Develop a simple application with one EditText so that the user can write some text
+in it. Create a button called “Convert Text to Speech” that converts the user input text into
+voice.
+1) Firstly Create an Application by Name “TextToSpeech”
+2) Go to xml code of design change the layout to “Constraint Layout”
+3) Add TextView component & change the following properties:
+ Size: 38dp
+ Text: Text2Speech App
+ Center-Align
+4) Add PlainText(EditText) component & change the following properties in XMLCode:
+ Text: “”
+ Hint: “Enter the text to be converted”
+ id: “@+id/editText”
+5) Add Button component & change the following properties in XML Code:
+ Name: Convert
+ onClick: convert
+ id: “@+id/button”
+JAVA-CODE:
+package com.example.TextToSpeech;
+import androidx.appcompat.app.AppCompatActivity;
+import android.os.Bundle;
+import android.speech.tts.TextToSpeech;
+import android.view.View;
+import android.widget.EditText;
+import android.widget.Toast;
+import java.util.Locale;
+import com.example.texttospeech.R;
+public class MainActivity extends AppCompatActivity {
+TextToSpeech t1;
+EditText e1;
+@Override
+protected void onCreate(Bundle savedInstanceState) {
+super.onCreate(savedInstanceState);
+setContentView(R.layout.activity_main);
+e1 = findViewById(R.id.editText);
+t1 = new TextToSpeech(getApplicationContext(), newTextToSpeech.OnInitListener() {
+@Override
+public void onInit(int status) {
+if (status!=TextToSpeech.ERROR){
+t1.setLanguage(Locale.UK);
+}
+}
+});
+}
+public void convert(View view){
+String tospeak = e1.getText().toString();
+t1.speak(tospeak,TextToSpeech.QUEUE_FLUSH,null);
+}
+}
+Program-8: Create an activity like a phone dialer with CALL and SAVE buttons. On pressing
+the CALL button, it must call the phone number and on pressing the SAVE button it must save
+the number to the phone contacts.
+1) Firstly Create an Application by Name “CallActivity”
+2) Go to xml code of design change the layout to “Constraint Layout”
+3) Add TextView component & change the following properties:
+ Size: 38dp
+ Text: Call Activity
+ Center-Align
+4) Add EditText component & change the following properties in XML Code:
+ id: “@+id/ txt_phonenumber”
+5) Add three buttons to the design & change the text of the Buttons to “Delete”, “Call”, “Save” and
+change the id as follows:
+ id: “@+id/ btn_delete”
+ id: “@+id/ btn_call”
+ id: “@+id/ btn_save”
+7) Add twelve buttons to the design & change the text of the Buttons as 1,2,3,4,5,6,7,8,9,0,*,#
+ id: “@+id/ btn_one”
+ id: “@+id/ btn_two”
+ id: “@+id/ btn_three”
+ id: “@+id/ btn_four”
+ id: “@+id/ btn_five”
+ id: “@+id/ btn_six”
+ id: “@+id/ btn_seven”
+ id: “@+id/ btn_eight”
+ id: “@+id/ btn_nine”
+ id: “@+id/ btn_zero”
+ id: “@+id/ btn_star”
+ id: “@+id/ btn_hash”
+JAVA-CODE:
+package com.example.callactivity;
+import androidx.appcompat.app.AppCompatActivity;
+import android.content.Intent;
+import android.net.Uri;
+import android.os.Bundle;
+import android.provider.ContactsContract;
+import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
+import com.example.callactivity.R;
+public class MainActivity extends AppCompatActivity implements View.OnClickListener{
+ Button btnOne,btnTwo,btnThree,btnFour,btnFive;
+ Button btnSix,btnSeven,btnEight,btnNine,btnZero;
+ Button btnDel,btnStar,btnHash,btnCall,btnSave;
+ EditText txtPhonenumber;
+ @Override
+ protected void onCreate(Bundle savedInstanceState){
+ super.onCreate(savedInstanceState);
+ setContentView(R.layout.activity_main);
+ btnOne=(Button)findViewById(R.id.btn_one);
+ btnOne.setOnClickListener(this);
+ btnTwo=(Button)findViewById(R.id.btn_two);
+ btnTwo.setOnClickListener(this);
+ btnThree=(Button)findViewById(R.id.btn_three);
+ btnThree.setOnClickListener(this);
+ btnFour=(Button)findViewById(R.id.btn_four);
+ btnFour.setOnClickListener(this);
+ btnFive=(Button)findViewById(R.id.btn_five);
+ btnFive.setOnClickListener(this);
+ btnSix=(Button)findViewById(R.id.btn_six);
+ btnSix.setOnClickListener(this);
+ btnSeven=(Button)findViewById(R.id.btn_seven);
+ btnSeven.setOnClickListener(this);
+ btnEight=(Button)findViewById(R.id.btn_eight);
+ btnEight.setOnClickListener(this);
+ btnNine=(Button)findViewById(R.id.btn_nine);
+ btnNine.setOnClickListener(this);
+ btnZero=(Button)findViewById(R.id.btn_zero);
+ btnZero.setOnClickListener(this);
+ btnStar=(Button)findViewById(R.id.btn_star);
+ btnStar.setOnClickListener(this);
+ btnHash=(Button)findViewById(R.id.btn_hash);
+ btnHash.setOnClickListener(this);
+ btnCall=(Button)findViewById(R.id.btn_call);
+ btnCall.setOnClickListener(this);
+ btnSave=(Button)findViewById(R.id.btn_save);
+ btnSave.setOnClickListener(this);
+ btnDel=(Button)findViewById(R.id.btn_delete);
+ btnDel.setOnClickListener(this);
+ txtPhonenumber=(EditText)findViewById(R.id.txt_phonenumber);
+ txtPhonenumber.setText("");
+ }
+ public void onClick(View v)
+ {
+ if(v.equals(btnOne))
+ txtPhonenumber.append("1");
+ else if(v.equals(btnTwo))
+ txtPhonenumber.append("2");
+ else if(v.equals(btnThree))
+ txtPhonenumber.append("3");
+ else if(v.equals(btnFour))
+ txtPhonenumber.append("4");
+ else if(v.equals(btnFive))
+ txtPhonenumber.append("5");
+ else if(v.equals(btnSix))
+ txtPhonenumber.append("6");
+ else if(v.equals(btnSeven))
+ txtPhonenumber.append("7");
+ else if(v.equals(btnEight))
+ txtPhonenumber.append("8");
+ else if(v.equals(btnNine))
+ txtPhonenumber.append("9");
+ else if(v.equals(btnZero))
+ txtPhonenumber.append("0");
+ else if(v.equals(btnStar))
+ txtPhonenumber.append("*");
+ else if(v.equals(btnHash))
+ txtPhonenumber.append("#");
+ else if(v.equals(btnSave))
+ {
+ Intent contactIntent=new Intent (ContactsContract.Intents.Insert.ACTION);
+ contactIntent.setType(ContactsContract.RawContacts.CONTENT_TYPE);
+ contactIntent.putExtra(ContactsContract.Intents.Insert.NAME,"Unknown");
+ contactIntent.putExtra(ContactsContract.Intents.Insert.PHONE, txtPhonenumber.getText().toString());
+ startActivity(contactIntent);
+ }
+ else if(v.equals(btnDel))
+ {
+ String data=txtPhonenumber.getText().toString();
+ if(data.length()>0)
+ {
+ txtPhonenumber.setText (data.substring(0,data.length()-1));
+ }
+ else
+ {
+ txtPhonenumber.setText("");
+ }
+ }
+ btnCall.setOnClickListener(new View.OnClickListener(){
+ @Override
+ public void onClick(View v){
+ String data=txtPhonenumber.getText().toString();
+ Intent intent=new Intent(Intent.ACTION_DIAL);
+ intent.setData(Uri.parse("tel:"+data));
+ startActivity(intent);
+ }
+ });
+ }
+}
