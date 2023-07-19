@@ -1,0 +1,2083 @@
+ATRIA INSTITUTE OF TECHNOLOGY  
+ 
+DEPARTMENT OF INFORMATION SCIENCE & ENGINEERING  
+ASKB Campus, 1st Main Road, AG’s Colony, 
+Anand Nagar, Bengaluru, Karnataka 560024 
+www.atria.edu 
+      
+ 
+ 
+“MOBILE APPLICATION DEVELOPMENT LAB MANUAL” 
+(18CSMP68) 
+As per VTU Revised Syllabus 
+ 
+ 
+ 
+ 
+ 
+PREPARED BY 
+PROF. PRAPULLA G 
+Asst. Professor, Department of Information Science & Engineering 
+ATRIA IT, Bengaluru 
+Email: prapulla.g@atria.edu 
+ 
+PROF. UZMA SULTHANA 
+Asst. Professor, Department of Information Science & Engineering 
+ATRIA IT, Bengaluru 
+Email: uzma.sulthana@atria.edu 
+ 
+ 
+                                                                                                                                                          
+ 
+1 Mobile Application Development 
+1 Department of Information Science & Engineering, Atria Institute of Technology 
+SYLLABUS 
+MOBILE APPLICATION DEVELOPMENT 
+(Effective from the academic year 2018 -2019) 
+SEMESTER – VI 
+ 
+Course Code-18CSMP68, IA Marks 40, Exam Marks 60. 
+PART A 
+1. Create an application to design a Visiting Card. The Visiting card should have a 
+company logo at the top right corner. The company name should be displayed in 
+Capital letters, aligned to the centre. Information like the name of the employee, job 
+title, phone number, address, email, fax and the website address is to be displayed. 
+Insert a horizontal line between the job title and the phone number. 
+ 
+ 
+2. Develop an Android application using controls like Button, TextView, EditText for 
+designing a calculator having basic functionality like Addition, Subtraction, 
+Multiplication, and Division. 
+ 
+ 
+3. Create a SIGN Up activity with Username and Password. Validation of password 
+should happen based on the following rules:  
+a.  Password should contain uppercase and lowercase letters.  
+b.  Password should contain letters and numbers.  
+c. Password should contain special characters.  
+d. Minimum length of the password (the default value is 8). 
+Mobile Application Development
+ 2
+ On successful SIGN UP proceed to the next Login activity. Here th
+ e user should SIGN IN 
+using the Username and Password created during signup activity. If the Username and 
+Password are matched then navigate to the next activity which
+ displays a message saying 
+“Successful Login” or else display a toast message saying “Log
+ only two attempts and after that
+ in Failed”.
+ The user is given 
+display a toast message saying “Failed Login Attempts” and 
+disable the SIGN IN button. Use Bundle to transfer information from one activity to another.
+ 4.
+ Develop an application to set an 
+image as wallpaper. On click of a button, the 
+wallpaper image should start to change randomly every 30 seconds.
+ 5.
+ 6.
+ of
+ the
+ Write a program to create an activity with two buttons START and STOP. On 
+pressing
+ START button, the activity must start the counter by displaying the 
+numbers from One and the counter must keep on counting until the STOP button is 
+pressed. Display the counter value in a TextView
+ control.
+ Create two files of XML and JSON type with values for City_Name, Latitude, 
+Longitude, Temperature,
+ and
+ Humidity. Develop an application to create an activity 
+with two buttons to parse the XML and JSON files which when clicked should 
+display the data in the
+ ir respective layouts side by side.
+ Department 
+of Information Science & Engineering
+ ,
+ Atria Institute 
+o
+ f Technology
+ 2
+Mobile Application Development
+ 3
+ 7.
+ Develop a simple application with
+ one
+ Edit
+ Text
+ so that the user can write some 
+text in it. Create a button called “Convert Text to Speech” that converts the user 
+input text into voice.
+ 8.
+ Create an activity like a phone dialer with CALL and SAVE buttons. On pressing 
+the CALL button, it must call the phone number and on pressing the SAVE button 
+it must save the number to the phone contacts.
+ PART B
+ (Taken as mini project)
+ 1.
+ Write a 
+program to enter Medicine Name, Date and Time of the Day as input 
+from the user and store it in the SQLite database. Input for Time of the Day 
+should be either Morning or Afternoon or Evening
+ based on the Date and Time of the Day
+ or Night. Trigger an alarm 
+and display the Medicine Name.
+ 2.
+ Develop a content provider application with an activity called “Meeting 
+Schedule” which takes Date, Time and Meeting Agenda as input from the user 
+and store this information into the SQLite database. Create another applicati
+ with an activity called “Meeting Info” having Date
+ on 
+Picker control, which on 
+the selection of a date should display the Meeting Agenda information for that 
+Department 
+of Information Science & Engineering
+ ,
+ Atria Institute 
+o
+ f Technology
+ 3
+Mobile Application Development
+ 4
+ particular date, else it should display a toast message saying “No Meeting on 
+this Date”.
+ 3.
+ 4.
+ 5.
+ 6.
+ 7.
+ 8.
+ Create a
+ n application to receive an incoming SMS which is notified to the 
+user. On clicking this SMS notification, the message content and the number 
+should be displayed on the screen. Use appropriate emulator control to send 
+the SMS message to your application.
+ W
+ rite a program to create an activity having a Text box, and also Save, Open 
+and Create buttons. The user has to write some text in the Text box. On 
+pressing the Create button the text should be saved as a text file in MkSDcard. 
+On subsequent changes to the
+ text, the Save button should be pressed to store 
+the latest content to the same file. On pressing the Open button, it should 
+display the contents from the previously stored files in the Text box. If the 
+user tries to save the contents in the Textbox to a 
+file without creating it, then 
+a toast message has to be displayed saying “First Create a File”.
+ Create an application to demonstrate a basic media player
+ that allows the user 
+to Forward, Backward, Play and Pause an audio. Also, make use of the 
+indicator i
+ n the seek bar to move the audio forward or backward as required.
+ Develop an application to demonstrate the use of Asynchronous tasks in 
+android. The asynchronous task should implement the functionality of a 
+simple moving banner. On pressing the Start Task
+ button, the banner message 
+should scroll
+ from right to left. On pressing the Stop Task button, the banner 
+message should stop.
+ Let the banner message be “Demonstration of 
+Asynchronous Task”.
+ Develop an application that makes use of the clipboard framework
+ for copying 
+and pasting of the text. The activity consists of two EditText controls and two 
+Buttons to trigger the copy and paste functionality.
+ Create an AIDL service that calculates Car Loan EMI. The formula to 
+calculate EMI is E = P * (r(1+r)n )/((1+r)
+ n 
+1) where E = The EMI payable on 
+the car loan amount P = The Car loan Principal Amount r = The interest rate 
+value computed on a monthly basis n = The loan tenure in the form of months 
+The down payment amount has to be deducted from the principal amount 
+paid 
+towards buying the Car. Develop an application that makes use of this AIDL 
+service to calculate the EMI. This application should have four EditText to 
+read the Principal
+ Amount, Down Payment, Interest Rate, Loan Term (in 
+months) and a button named as 
+“Calculate Monthly EMI”. On click of this 
+button, the result should be shown in a TextView. Also, calculate the EMI by 
+varying the Loan Term and Interest Rate values.
+ Department 
+of Information Science & Engineering
+ ,
+ Atria Institute 
+o
+ f Technology
+ 4
+                                                                                                                                                          
+ 
+5 Mobile Application Development 
+5 Department of Information Science & Engineering, Atria Institute of Technology 
+CONTENTS 
+SL.NO PROGRAM NAME PAGE NO. 
+PART-A 
+1 Visiting Card 6 
+2 Design a Calculator 11 
+3 Create a SIGN Up activity 
+with Username and Password. 16 
+4 Develop an application to set 
+an image as wallpaper. 24 
+5 
+Write a program to create an 
+activity with two buttons 
+START and STOP 
+27 
+6 
+Create two files of XML and 
+JSON type with values for 
+City_Name, Latitude, 
+Longitude, 
+Temperature,andHumidity. 
+31 
+7 
+Develop a simple application 
+withoneEditTextso that the 
+user can write some text in it. 
+37 
+8 
+Create an activity like a phone 
+dialer withCALLand SAVE 
+buttons. 
+40 
+ 
+ 
+ 
+ 
+ 
+                                                                                                                                                          
+ 
+6 Mobile Application Development 
+6 Department of Information Science & Engineering, Atria Institute of Technology 
+Program-1:  
+Create an application to design a Visiting Card. The Visiting card should have a company logo 
+at the top right corner. The company name should be displayed in Capital letters, aligned to 
+the centre. Information like the name of the employee, job title, phone number, address, email, 
+fax and the website address are to be displayed. Insert a horizontal line between the job title 
+and the phone number. 
+1) Firstly, Create an Application by Name “VisitingCardApp” 
+2) Go to xml code of design change the layout to “RelativeLayout” 
+3) Add TextView component change the following properties: 
+• Size: 38dp 
+• Text: AIT 
+• Align left top 
+ 
+4) Add ImageView to design and in type choose “IC_LAUNCHER_FOREGROUND” 
+• Download the logo & copy the same in res->drawable folder 
+• In xml code of imageview change srcCompat=”@drawable/logo” 
+• Align right top 
+ 
+5) Add View component & change the following properties: 
+• Height: 4dp 
+• Background: “#4444” (black color) 
+ 
+6) Add TextView component change the following properties: 
+• Size: 20dp 
+• Text: Uzma Sulthana 
+• Style: Bold 
+• Align center 
+ 
+7) Add TextView component change the following properties: 
+• Size: 24sp 
+• Text: Assistant Professor-ISE 
+• Align center 
+ 
+8) Add TextView component change the following properties: 
+• Size: 24dp 
+• Text: Address: ASKB Campus, Anandnagar, | Bangalore-560024 
+• Align: center 
+ 
+9) Add TextView component change the following properties: 
+• Size: 24sp 
+• Text: Email-uzma.sulthana@atria.edu  
+• Align: center 
+ 
+                                                                                                                                                          
+ 
+7 Mobile Application Development 
+7 Department of Information Science & Engineering, Atria Institute of Technology 
+10)   Add TextView component change the following properties: 
+• Size: 24sp 
+• Text: Phone-9108380566 
+ 
+XML-CODE 
+<?xml version="1.0" encoding="utf-8"?> 
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android" 
+    xmlns:app="http://schemas.android.com/apk/res-auto" 
+    xmlns:tools="http://schemas.android.com/tools" 
+    android:layout_width="match_parent" 
+    android:layout_height="match_parent" 
+    android:background="#FFFFFF" 
+    tools:context=".MainActivity"> 
+ 
+    <TextView 
+        android:id="@+id/textView4" 
+        android:layout_width="371dp" 
+        android:layout_height="wrap_content" 
+        android:layout_alignParentStart="true" 
+        android:layout_alignParentLeft="true" 
+        android:layout_alignParentEnd="true" 
+        android:layout_alignParentRight="true" 
+        android:layout_alignParentBottom="true" 
+        android:layout_marginStart="28dp" 
+        android:layout_marginLeft="28dp" 
+        android:layout_marginEnd="12dp" 
+        android:layout_marginRight="12dp" 
+        android:layout_marginBottom="219dp" 
+        android:text="Address:ASKB Campus, Anandnagar, | Bangalore - 560 024" 
+        android:textAlignment="center" 
+        android:textSize="24sp" /> 
+ 
+    <TextView 
+        android:id="@+id/textView5" 
+        android:layout_width="250dp" 
+        android:layout_height="wrap_content" 
+        android:layout_alignParentStart="true" 
+        android:layout_alignParentLeft="true" 
+        android:layout_alignParentEnd="true" 
+        android:layout_alignParentRight="true" 
+        android:layout_alignParentBottom="true" 
+        android:layout_marginStart="87dp" 
+        android:layout_marginLeft="87dp" 
+        android:layout_marginEnd="73dp" 
+        android:layout_marginRight="73dp" 
+                                                                                                                                                          
+ 
+8 Mobile Application Development 
+8 Department of Information Science & Engineering, Atria Institute of Technology 
+        android:layout_marginBottom="157dp" 
+        android:text="Ph No: 9108380566" 
+        android:textAlignment="center" 
+        android:textSize="24sp" /> 
+ 
+    <TextView 
+        android:id="@+id/textView6" 
+        android:layout_width="367dp" 
+        android:layout_height="wrap_content" 
+        android:layout_alignParentStart="true" 
+        android:layout_alignParentLeft="true" 
+        android:layout_alignParentEnd="true" 
+        android:layout_alignParentRight="true" 
+        android:layout_alignParentBottom="true" 
+        android:layout_marginStart="25dp" 
+        android:layout_marginLeft="25dp" 
+        android:layout_marginEnd="19dp" 
+        android:layout_marginRight="19dp" 
+        android:layout_marginBottom="64dp" 
+        android:text="Email Id: uzma.sulthana@atria.edu" 
+        android:textAlignment="center" 
+        android:textSize="24sp" /> 
+ 
+    <TextView 
+        android:id="@+id/textView3" 
+        android:layout_width="367dp" 
+        android:layout_height="66dp" 
+        android:layout_alignParentStart="true" 
+        android:layout_alignParentLeft="true" 
+        android:layout_alignParentEnd="true" 
+        android:layout_alignParentRight="true" 
+        android:layout_alignParentBottom="true" 
+        android:layout_marginStart="32dp" 
+        android:layout_marginLeft="32dp" 
+        android:layout_marginEnd="12dp" 
+        android:layout_marginRight="12dp" 
+        android:layout_marginBottom="287dp" 
+        android:text="Assistant Professor-ISE" 
+        android:textAlignment="center" 
+        android:textSize="24sp" /> 
+ 
+    <ImageView 
+        android:id="@+id/imageView3" 
+        android:layout_width="155dp" 
+        android:layout_height="98dp" 
+        android:layout_alignParentEnd="true" 
+                                                                                                                                                          
+ 
+9 Mobile Application Development 
+9 Department of Information Science & Engineering, Atria Institute of Technology 
+        android:layout_alignParentRight="true" 
+        android:layout_alignParentBottom="true" 
+        android:layout_marginEnd="12dp" 
+        android:layout_marginRight="12dp" 
+        android:layout_marginBottom="495dp" 
+        app:srcCompat="@drawable/aitlogo" /> 
+ 
+    <View 
+        android:id="@+id/view" 
+        android:layout_width="wrap_content" 
+        android:layout_height="4dp" 
+        android:layout_alignParentBottom="true" 
+        android:layout_marginBottom="487dp" 
+        android:background="#4444" /> 
+ 
+    <TextView 
+        android:id="@+id/textView2" 
+        android:layout_width="176dp" 
+        android:layout_height="wrap_content" 
+        android:layout_alignParentStart="true" 
+        android:layout_alignParentLeft="true" 
+        android:layout_alignParentEnd="true" 
+        android:layout_alignParentRight="true" 
+        android:layout_alignParentBottom="true" 
+        android:layout_marginStart="95dp" 
+        android:layout_marginLeft="95dp" 
+        android:layout_marginEnd="140dp" 
+        android:layout_marginRight="140dp" 
+        android:layout_marginBottom="401dp" 
+        android:text="Uzma Sulthana" 
+        android:textAlignment="center" 
+        android:textSize="24sp" 
+        android:textStyle="bold" /> 
+ 
+    <TextView 
+        android:id="@+id/textView7" 
+        android:layout_width="wrap_content" 
+        android:layout_height="wrap_content" 
+        android:layout_alignParentBottom="true" 
+        android:layout_marginEnd="99dp" 
+        android:layout_marginRight="99dp" 
+        android:layout_marginBottom="495dp" 
+        android:layout_toStartOf="@+id/imageView3" 
+        android:layout_toLeftOf="@+id/imageView3" 
+        android:text="AIT" 
+        android:textColor="#E91E63" 
+Mobile Application Development
+ 10
+ android:textSize="36sp"
+ android:textStyle="bold" />
+ </RelativeLayout>
+ JAVA
+CODE
+ package com.example.visitingcardapplication;
+ import androidx.appcompat.app.AppCompatActivity;
+ import android.os.Bundle;
+ public class MainActivity extends AppCompatActivity {
+ @Override
+ protected void onCreate(Bundle savedInstanceState) {
+ super.onCreate(savedInstanceState);
+ setContentView(R.layout.activity_main);
+ }
+ }
+ OUTPUT:
+ Department 
+of Information Science & Engineering
+ ,
+ Atria Institute 
+o
+ f Technology
+ 10
+                                                                                                                                                          
+ 
+11 Mobile Application Development 
+11 Department of Information Science & Engineering, Atria Institute of Technology 
+Program-2:  
+Develop an Android application using controls like Button, TextView, EditText for designing 
+a calculator having basic functionality like Addition, Subtraction, Multiplication, and Division. 
+1) Firstly, Create an Application by Name “calciApplication” 
+2) Go to xml code of design change the layout to “RelativeLayout” 
+3) Add TextView component & change the following properties: 
+• Size: 36sp 
+• Text: Simple Calci 
+• Center-Align 
+4) Add PlainText(EditText) component & change the following properties in XML Code: 
+• Text: “” 
+• Hint: “Enter the Number 1” 
+• id: “@+id/editText1” 
+5) Add PlainText(EditText) component & change the following properties in XML Code: 
+• Text: “” 
+• Hint: “Enter the Number 2 ” 
+• id: “@+id/editText2” 
+6) Add TextView component to display result & change the following properties: 
+• Size: 40dp 
+• Text: “0” 
+• Center-Align 
+• id: “@+id/textView1” 
+7) Add 4 Buttons & rename the four buttons “Add”, “Sub”,”Mul” and “div” 
+with following addition: 
+• Onclick: “doAdd”(Add Button) 
+• Onclick: “doSub”(Sub Button) 
+• Onclick: “doMul”(Mul Button) 
+• Onclick: “doDiv”(Div Button) 
+XML-CODE 
+<?xml version="1.0" encoding="utf-8"?> 
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android" 
+    xmlns:app="http://schemas.android.com/apk/res-auto" 
+    xmlns:tools="http://schemas.android.com/tools" 
+    android:layout_width="match_parent" 
+    android:layout_height="match_parent" 
+    tools:context=".MainActivity"> 
+ 
+    <TextView 
+        android:layout_width="209dp" 
+        android:layout_height="60dp" 
+        android:layout_alignParentEnd="true" 
+        android:layout_alignParentRight="true" 
+        android:layout_alignParentBottom="true" 
+                                                                                                                                                          
+ 
+12 Mobile Application Development 
+12 Department of Information Science & Engineering, Atria Institute of Technology 
+        android:layout_marginEnd="108dp" 
+        android:layout_marginRight="108dp" 
+        android:layout_marginBottom="530dp" 
+        android:text="Simple Calci" 
+        android:textSize="36sp" 
+        app:layout_constraintBottom_toBottomOf="parent" 
+        app:layout_constraintLeft_toLeftOf="parent" 
+        app:layout_constraintRight_toRightOf="parent" 
+        app:layout_constraintTop_toTopOf="parent" /> 
+ 
+    <EditText 
+        android:id="@+id/editText2" 
+        android:layout_width="wrap_content" 
+        android:layout_height="wrap_content" 
+        android:layout_alignParentEnd="true" 
+        android:layout_alignParentRight="true" 
+        android:layout_alignParentBottom="true" 
+        android:layout_marginEnd="115dp" 
+        android:layout_marginRight="115dp" 
+        android:layout_marginBottom="364dp" 
+        android:ems="10" 
+        android:hint="Enter the Number 2" 
+        android:inputType="textPersonName" 
+        android:text="" 
+        android:textColorHighlight="#FFFFFF" /> 
+ 
+    <EditText 
+        android:id="@+id/editText1" 
+        android:layout_width="wrap_content" 
+        android:layout_height="wrap_content" 
+        android:layout_alignParentEnd="true" 
+        android:layout_alignParentRight="true" 
+        android:layout_alignParentBottom="true" 
+        android:layout_marginEnd="110dp" 
+        android:layout_marginRight="110dp" 
+        android:layout_marginBottom="439dp" 
+        android:ems="10" 
+        android:hint="Enter the Number 1" 
+        android:inputType="textPersonName" 
+        android:text="" 
+        android:textColorHighlight="#FFFFFF" /> 
+ 
+    <Button 
+        android:id="@+id/button" 
+        android:layout_width="wrap_content" 
+        android:layout_height="wrap_content" 
+                                                                                                                                                          
+ 
+13 Mobile Application Development 
+13 Department of Information Science & Engineering, Atria Institute of Technology 
+        android:layout_alignParentEnd="true" 
+        android:layout_alignParentRight="true" 
+        android:layout_alignParentBottom="true" 
+        android:layout_marginEnd="260dp" 
+        android:layout_marginRight="260dp" 
+        android:layout_marginBottom="175dp" 
+        android:text="ADD" 
+        android:textStyle="bold" 
+        android:onClick="add" 
+        app:backgroundTint="#E8F381" /> 
+ 
+    <Button 
+        android:id="@+id/button3" 
+        android:layout_width="wrap_content" 
+        android:layout_height="wrap_content" 
+        android:layout_alignParentEnd="true" 
+        android:layout_alignParentRight="true" 
+        android:layout_alignParentBottom="true" 
+        android:layout_marginEnd="266dp" 
+        android:layout_marginRight="266dp" 
+        android:layout_marginBottom="61dp" 
+        android:text="MUL" 
+        android:onClick="mul" 
+        app:backgroundTint="#A1FAA4" /> 
+ 
+    <Button 
+        android:id="@+id/button4" 
+        android:layout_width="wrap_content" 
+        android:layout_height="wrap_content" 
+        android:layout_alignParentEnd="true" 
+        android:layout_alignParentRight="true" 
+        android:layout_alignParentBottom="true" 
+        android:layout_marginEnd="108dp" 
+        android:layout_marginRight="108dp" 
+        android:layout_marginBottom="63dp" 
+        android:text="DIV" 
+        android:onClick="div" 
+        app:backgroundTint="#E6C28C" /> 
+ 
+    <Button 
+        android:id="@+id/button2" 
+        android:layout_width="wrap_content" 
+        android:layout_height="wrap_content" 
+        android:layout_alignParentEnd="true" 
+        android:layout_alignParentRight="true" 
+        android:layout_alignParentBottom="true" 
+                                                                                                                                                          
+ 
+14 Mobile Application Development 
+14 Department of Information Science & Engineering, Atria Institute of Technology 
+        android:layout_marginEnd="105dp" 
+        android:layout_marginRight="105dp" 
+        android:layout_marginBottom="182dp" 
+        android:text="SUB" 
+        android:onClick="sub" 
+        app:backgroundTint="#ECA9A9" /> 
+ 
+    <TextView 
+        android:id="@+id/tv1" 
+        android:layout_width="86dp" 
+        android:layout_height="61dp" 
+        android:layout_alignParentEnd="true" 
+        android:layout_alignParentRight="true" 
+        android:layout_alignParentBottom="true" 
+        android:layout_marginEnd="202dp" 
+        android:layout_marginRight="202dp" 
+        android:layout_marginBottom="274dp" 
+        android:text="0" 
+        android:textSize="36sp" /> 
+ 
+</RelativeLayout> 
+ 
+JAVA-CODE 
+import androidx.appcompat.app.AppCompatActivity; 
+import android.os.Bundle; 
+import android.view.View; 
+import android.widget.Button; 
+import android.widget.EditText; 
+import android.widget.TextView; 
+ 
+public class MainActivity extends AppCompatActivity { 
+EditText e1,e2; 
+TextView tv; 
+ 
+    @Override 
+    protected void onCreate(Bundle savedInstanceState) { 
+        super.onCreate(savedInstanceState); 
+        setContentView(R.layout.activity_main); 
+        e1 =(EditText)findViewById(R.id.editText1); 
+        e2 = (EditText)findViewById(R.id.editText2); 
+        tv= (TextView)findViewById(R.id.tv1); 
+    } 
+    public void add(View v){ 
+        int a1=Integer.parseInt(e1.getText().toString()); 
+        int a2= Integer.parseInt(e2.getText().toString()); 
+        int result=a1+a2; 
+Mobile Application Development
+ 15
+ tv.setText(""+result);
+ }
+ public void sub(View v){
+ int a1=Integer.parseInt(e1.getText().toString());
+ int a2= Integer.parseInt(e2.getText().toString());
+ int result=a1
+a2;
+ tv.setText(""+result);
+ }
+ public void mul(View v){
+ int a1=Integer.parseInt(e1.getText().toString());
+ int a2= Integer.parseInt(e2.getText().toString());
+ int result=a1*a2;
+ tv.setText(""+result);
+ }
+ public voi
+ d div(View v){
+ float a1=Integer.parseInt(e1.getText().toString());
+ float a2= Integer.parseInt(e2.getText().toString());
+ float result=a1/a2;
+ tv.setText(""+result);
+ }
+ }
+ OUTPUT:
+ Department 
+of Information Science & Engineering
+ ,
+ Atria Institute 
+o
+ f Technology
+ 15
+                                                                                                                                                          
+ 
+16 Mobile Application Development 
+16 Department of Information Science & Engineering, Atria Institute of Technology 
+Program-3:  
+Create a SIGNUp activity with Username and Password. Validation of password 
+should happen based on the following rules: 
+• Password should contain uppercase and lowercase letters. 
+• Password should contain letters and numbers. 
+• Password should contain special characters. 
+• Minimum length of the password (the default value is 8). 
+On successful SIGN UP proceed to the next Login activity. Here the user should SIGN 
+IN using the Username and Password created during signup activity. If the Username 
+and Password are matched then navigate to the next activity which displays a message 
+saying “Successful Login” or else display a toast message saying “Login Failed”. The 
+user is given only two attempts and after that display a toast message saying “Failed 
+Login Attempts” and disable the SIGN IN button. Use Bundle to transfer information 
+from one activity to another. 
+1) Firstly Create an Application by Name “SignUpApplication” 
+2) Go to xml code of design change the layout to “RelativeLayout” 
+3) Add TextView component & change the following properties: 
+• Size: 24sp 
+• Text: “Sign Up” 
+• Center-Align 
+4) Add Email (EditText) component & change the following properties in XML Code: 
+• Hint: “Email-ID” 
+• id: “@+id/emailEditText” 
+5) Add Password (EditText) component & change the following properties in XML 
+Code: 
+• Hint: “Password” 
+• id: “@+id/passwordEditText” 
+6) Add Button component & change the following properties in XML 
+• Id: “@+id/signBtn” 
+• Text: “Sign Up” 
+XML-CODE 
+<?xml version="1.0" encoding="utf-8"?> 
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android" 
+    xmlns:app="http://schemas.android.com/apk/res-auto" 
+    xmlns:tools="http://schemas.android.com/tools" 
+    android:layout_width="match_parent" 
+    android:layout_height="match_parent" 
+    tools:context=".MainActivity"> 
+    <TextView 
+        android:layout_width="129dp" 
+        android:layout_height="45dp" 
+        android:layout_alignParentEnd="true" 
+                                                                                                                                                          
+ 
+17 Mobile Application Development 
+17 Department of Information Science & Engineering, Atria Institute of Technology 
+        android:layout_alignParentRight="true" 
+        android:layout_alignParentBottom="true" 
+        android:layout_marginEnd="168dp" 
+        android:layout_marginRight="168dp" 
+        android:layout_marginBottom="596dp" 
+        android:text="Sign Up" 
+        android:textSize="24sp" 
+        android:textStyle="bold" 
+        app:layout_constraintBottom_toBottomOf="parent" 
+        app:layout_constraintLeft_toLeftOf="parent" 
+        app:layout_constraintRight_toRightOf="parent" 
+        app:layout_constraintTop_toTopOf="parent" /> 
+ 
+    <EditText 
+        android:id="@+id/SignUp_email" 
+        android:layout_width="wrap_content" 
+        android:layout_height="wrap_content" 
+        android:layout_alignParentEnd="true" 
+        android:layout_alignParentRight="true" 
+        android:layout_alignParentBottom="true" 
+        android:layout_marginEnd="114dp" 
+        android:layout_marginRight="114dp" 
+        android:layout_marginBottom="464dp" 
+        android:ems="10" 
+        android:hint="EmailId" 
+        android:inputType="textPersonName" /> 
+ 
+    <Button 
+        android:id="@+id/signUpBtn" 
+        android:layout_width="wrap_content" 
+        android:layout_height="wrap_content" 
+        android:layout_alignParentEnd="true" 
+        android:layout_alignParentRight="true" 
+        android:layout_alignParentBottom="true" 
+        android:layout_marginEnd="168dp" 
+        android:layout_marginRight="168dp" 
+        android:layout_marginBottom="245dp" 
+        android:text="Sign Up" /> 
+ 
+    <EditText 
+        android:id="@+id/SignUp_Password" 
+        android:layout_width="wrap_content" 
+        android:layout_height="wrap_content" 
+        android:layout_alignParentEnd="true" 
+        android:layout_alignParentRight="true" 
+        android:layout_alignParentBottom="true" 
+                                                                                                                                                          
+ 
+18 Mobile Application Development 
+18 Department of Information Science & Engineering, Atria Institute of Technology 
+        android:layout_marginEnd="101dp" 
+        android:layout_marginRight="101dp" 
+        android:layout_marginBottom="385dp" 
+        android:ems="10" 
+        android:hint="Password" 
+        android:inputType="textPassword" /> 
+ 
+</RelativeLayout> 
+ 
+JAVA-CODE 
+package com.example.signupapplication; 
+import androidx.appcompat.app.AppCompatActivity; 
+import android.content.Intent; 
+import android.os.Bundle; 
+import android.view.View; 
+import android.widget.Button; 
+import android.widget.EditText; 
+import android.widget.Toast; 
+import java.util.regex.Pattern; 
+ 
+public class MainActivity extends AppCompatActivity { 
+    EditText email_Sign, password_Sign; 
+    Button signUp_btn; 
+ 
+    @Override 
+    protected void onCreate(Bundle savedInstanceState) { 
+        super.onCreate(savedInstanceState); 
+        setContentView(R.layout.activity_main); 
+        email_Sign=(EditText)findViewById(R.id.SignUp_email); 
+        password_Sign=(EditText)findViewById(R.id.SignUp_Password); 
+        signUp_btn =(Button)findViewById(R.id.signUpBtn); 
+        signUp_btn.setOnClickListener(new View.OnClickListener() { 
+            @Override 
+            public void onClick(View v) { 
+                String email = email_Sign.getText().toString(); 
+                String password = password_Sign.getText().toString(); 
+                if(!isValidPassword(password)) { 
+                    Toast.makeText(MainActivity.this,"Password doesn't match 
+rules",Toast.LENGTH_SHORT).show(); 
+                    return; 
+                } 
+                Intent intent = new Intent(MainActivity.this,loginActivity.class); 
+                intent.putExtra("email",email); 
+                intent.putExtra("password",password); 
+                                                                                                                                                          
+ 
+19 Mobile Application Development 
+19 Department of Information Science & Engineering, Atria Institute of Technology 
+                startActivity(intent); 
+            } 
+        }); 
+    } 
+    Pattern lowerCase= Pattern.compile("^.*[a-z].*$"); 
+    Pattern upperCase=Pattern.compile("^.*[A-Z].*$"); 
+    Pattern number = Pattern.compile("^.*[0-9].*$"); 
+    Pattern special_Chara = Pattern.compile("^.*[^a-zA-Z0-9].*$"); 
+    private Boolean isValidPassword(String password){ 
+        if(password.length()<8) { 
+            return false; 
+        } 
+        if(!lowerCase.matcher(password).matches()) { 
+            return false; 
+        } 
+        if(!upperCase.matcher(password).matches()) { 
+            return false; 
+        } 
+        if(!number.matcher(password).matches()) { 
+            return false; 
+        } 
+        if(!special_Chara.matcher(password).matches()) { 
+            return false; 
+        } 
+         return true; 
+    } 
+   } 
+1) Right click on Java folder-> new-> activity->empty activity-> name it as 
+“LoginActivity” 
+2) Go to xml code of design change the layout to “RelativeLayout” 
+3) Add TextView component & change the following properties: 
+• Size: 38dp 
+• Text: “Login” 
+• Center-Align 
+4) Add Email (EditText) component & change the following properties in XML Code: 
+• Hint: “Email ID” 
+• id: “@+id/emailEditText” 
+5) Add Password (EditText) component & change the following properties in 
+XML Code: 
+• Hint: “Password” 
+• id: “@+id/passwordEditText” 
+6) Add Button component & change the following properties in XML 
+• Id: “@+id/loginBtn” 
+• Text: “Login” 
+                                                                                                                                                          
+ 
+20 Mobile Application Development 
+20 Department of Information Science & Engineering, Atria Institute of Technology 
+XML-CODE 
+<?xml version="1.0" encoding="utf-8"?> 
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android" 
+    xmlns:app="http://schemas.android.com/apk/res-auto" 
+    xmlns:tools="http://schemas.android.com/tools" 
+    android:layout_width="match_parent" 
+    android:layout_height="match_parent" 
+    tools:context=".loginActivity"> 
+ 
+    <TextView 
+        android:id="@+id/loginTextView" 
+        android:layout_width="225dp" 
+        android:layout_height="45dp" 
+        android:layout_alignParentEnd="true" 
+        android:layout_alignParentRight="true" 
+        android:layout_alignParentBottom="true" 
+        android:layout_marginEnd="113dp" 
+        android:layout_marginRight="113dp" 
+        android:layout_marginBottom="544dp" 
+        android:text="Login" 
+        android:textSize="30sp" 
+        android:textStyle="bold" 
+        app:layout_constraintBottom_toBottomOf="parent" 
+        tools:layout_editor_absoluteX="143dp" /> 
+ 
+    <EditText 
+        android:id="@+id/passEditText" 
+        android:layout_width="wrap_content" 
+        android:layout_height="wrap_content" 
+        android:layout_alignParentEnd="true" 
+        android:layout_alignParentRight="true" 
+        android:layout_alignParentBottom="true" 
+        android:layout_marginEnd="124dp" 
+        android:layout_marginRight="124dp" 
+        android:layout_marginBottom="380dp" 
+        android:ems="10" 
+        android:hint="password" 
+        android:inputType="textPassword" /> 
+ 
+    <Button 
+        android:id="@+id/loginBtn" 
+        android:layout_width="wrap_content" 
+        android:layout_height="wrap_content" 
+        android:layout_alignParentEnd="true" 
+        android:layout_alignParentRight="true" 
+                                                                                                                                                          
+ 
+21 Mobile Application Development 
+21 Department of Information Science & Engineering, Atria Institute of Technology 
+        android:layout_alignParentBottom="true" 
+        android:layout_marginEnd="218dp" 
+        android:layout_marginRight="218dp" 
+        android:layout_marginBottom="263dp" 
+        android:text="Login" /> 
+ 
+    <EditText 
+        android:id="@+id/EmaileditText" 
+        android:layout_width="wrap_content" 
+        android:layout_height="wrap_content" 
+        android:layout_alignParentEnd="true" 
+        android:layout_alignParentRight="true" 
+        android:layout_alignParentBottom="true" 
+        android:layout_marginEnd="127dp" 
+        android:layout_marginRight="127dp" 
+        android:layout_marginBottom="455dp" 
+        android:ems="10" 
+        android:hint="Email ID" 
+        android:inputType="textPersonName" /> 
+</RelativeLayout> 
+JAVA-CODE 
+package com.example.signupapplication; 
+import androidx.appcompat.app.AppCompatActivity; 
+import android.content.Intent; 
+import android.os.Bundle; 
+import android.view.View; 
+import android.widget.Button; 
+import android.widget.EditText; 
+import android.widget.Toast; 
+public class loginActivity extends AppCompatActivity { 
+    EditText emailEditText,passwordEditText; 
+    Button login_btn; 
+    int counter=2; 
+    @Override 
+    protected void onCreate(Bundle savedInstanceState) { 
+        super.onCreate(savedInstanceState); 
+        setContentView(R.layout.activity_login2); 
+        emailEditText=(EditText)findViewById(R.id.EmaileditText); 
+        passwordEditText=(EditText)findViewById(R.id.passEditText); 
+        login_btn=(Button)findViewById(R.id.loginBtn); 
+        String registeredEmail = getIntent().getStringExtra("email"); 
+        String registeredPassword= getIntent().getStringExtra("password"); 
+        login_btn.setOnClickListener(new View.OnClickListener() { 
+            @Override 
+            public void onClick(View v) { 
+                                                                                                                                                          
+ 
+22 Mobile Application Development 
+22 Department of Information Science & Engineering, Atria Institute of Technology 
+                String email = emailEditText.getText().toString(); 
+                String password = passwordEditText.getText().toString(); 
+                if(registeredEmail.equals(email) && registeredPassword.equals(password)) 
+                { 
+                    Intent intent= new Intent(loginActivity.this,loginsuccessActivity.class); 
+                    startActivity(intent); 
+                } 
+                else { 
+                    Toast.makeText(loginActivity.this,"Invalid 
+Credentials",Toast.LENGTH_SHORT).show(); 
+                } 
+                counter--; 
+                if(counter==0){ 
+                    Toast.makeText(getBaseContext(),"failed to login 
+attempts",Toast.LENGTH_SHORT).show(); 
+                login_btn.setEnabled(false); 
+                } 
+            } 
+        }); 
+    } 
+} 
+1) Right click on Java folder-> new-> activity->empty activity-> name it as 
+“LoginSuccessful” 
+2) Go to xml code of design change the layout to “RelativeLayout” 
+3) Add TextView component & change the following properties: 
+• Size: 38dp 
+• Text: “Login Successful” 
+• Center-Align 
+XML-CODE 
+<?xml version="1.0" encoding="utf-8"?> 
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android" 
+    xmlns:app="http://schemas.android.com/apk/res-auto" 
+    xmlns:tools="http://schemas.android.com/tools" 
+    android:layout_width="match_parent" 
+    android:layout_height="match_parent" 
+    tools:context=".loginsuccessActivity"> 
+    <TextView 
+        android:id="@+id/textView" 
+        android:layout_width="match_parent" 
+        android:layout_height="121dp" 
+        android:layout_alignParentEnd="true" 
+        android:layout_alignParentRight="true" 
+        android:layout_alignParentBottom="true" 
+        android:layout_marginEnd="-11dp" 
+        android:layout_marginRight="-11dp" 
+Mobile Application Development
+ 23
+ android:layout_marginBottom="322dp"
+ android:text="Login Successful"
+ android:textSize
+ ="36sp"
+ android:textStyle="bold" />
+ </RelativeLayout>
+ JAVA
+CODE
+ package com.example.signupapplication;
+ import androidx.appcompat.app.AppCompatActivity;
+ import android.os.Bundle;
+ public class loginsuccessActivity extends AppCompatActivity {
+ @O
+ verride
+ protected void onCreate(Bundle savedInstanceState) {
+ super.onCreate(savedInstanceState);
+ setContentView(R.layout.
+ }
+ }
+ activity_loginsuccess
+ );
+ Department 
+of Information Science & Engineering
+ ,
+ Atria Institute 
+o
+ f Technology
+ 23
+                                                                                                                                                          
+ 
+24 Mobile Application Development 
+24 Department of Information Science & Engineering, Atria Institute of Technology 
+Program-4:  
+Develop an application to set an image as wallpaper. On click of a button, the 
+wallpaper image should start to change randomly every 30 seconds. 
+1) Firstly Create an Application by Name “WallpaperActivity” 
+2) Go to xml code of design change the layout to “RelativeLayout” 
+3) Add TextView component & change the following properties: 
+• Size: 38dp 
+• Text: Wall Paper Change Application 
+• Center-Align 
+4) Add Button component & change the following properties: 
+• Size: 38dp 
+• Text: Click Here To Change Wall Paper 
+5) Save five images (jpg format) in the drawable folder. In this example one.jpg, 
+two.jpg, three.jpg, four.jpg and five.jpg images are saved in drawable folder. 
+XML-CODE 
+<?xml version="1.0" encoding="utf-8"?> 
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android" 
+    xmlns:app="http://schemas.android.com/apk/res-auto" 
+    xmlns:tools="http://schemas.android.com/tools" 
+    android:layout_width="match_parent" 
+    android:layout_height="match_parent" 
+    tools:context=".MainActivity"> 
+ 
+ 
+    <Button 
+        android:id="@+id/button1" 
+        android:layout_width="wrap_content" 
+        android:layout_height="wrap_content" 
+        android:layout_alignParentEnd="true" 
+        android:layout_alignParentRight="true" 
+        android:layout_alignParentBottom="true" 
+        android:layout_marginEnd="167dp" 
+        android:layout_marginRight="167dp" 
+        android:layout_marginBottom="409dp" 
+        android:text="CLICK HERE" /> 
+</RelativeLayout> 
+JAVA-CODE 
+package com.example.wallpaperchangeapplication; 
+import androidx.appcompat.app.AppCompatActivity; 
+import android.app.WallpaperManager; 
+import android.graphics.Bitmap; 
+import android.graphics.BitmapFactory; 
+                                                                                                                                                          
+ 
+25 Mobile Application Development 
+25 Department of Information Science & Engineering, Atria Institute of Technology 
+import android.graphics.drawable.BitmapDrawable; 
+import android.graphics.drawable.Drawable; 
+import android.os.Bundle; 
+import android.os.Handler; 
+import android.view.View; 
+import android.widget.Button; 
+import android.widget.Toast; 
+import java.io.IOException; 
+import java.util.Timer; 
+import java.util.TimerTask; 
+ 
+public class MainActivity extends AppCompatActivity { 
+    Button wallpaperChange; 
+    Timer mytimer; 
+    Drawable drawable; 
+    WallpaperManager wpm; 
+    int prev=1; 
+ 
+        @Override 
+    protected void onCreate(Bundle savedInstanceState) { 
+        super.onCreate(savedInstanceState); 
+        setContentView(R.layout.activity_main); 
+        mytimer=new Timer(); 
+        wpm = WallpaperManager.getInstance(this); 
+        wallpaperChange=(Button)findViewById(R.id.button1); 
+        wallpaperChange.setOnClickListener(new View.OnClickListener() { 
+            @Override public void onClick(View view) { 
+            setwallpaper(); 
+        } 
+        }); 
+    } 
+ 
+    private void setwallpaper() { 
+        Toast.makeText(this,"setting Wallpaper please wait.",Toast.LENGTH_LONG).show(); 
+ 
+          mytimer.schedule(new TimerTask() { 
+              @Override 
+              public void run() 
+            { 
+ 
+                if(prev==1) { 
+                    drawable = getResources().getDrawable(R.drawable.i1); prev = 2; 
+                } 
+                else if(prev==2) { 
+                    drawable = getResources().getDrawable(R.drawable.i2); prev=3; 
+                } 
+Mobile Application Development
+ 26
+ else if(prev==3) {
+ drawable = getResources().getDrawable(R.drawable.
+ }
+ else if(prev==4) {
+ drawa
+ ble = getResources().getDrawable(R.drawable.
+ }
+ else if(prev==5) {
+ drawable = getResources().getDrawable(R.drawable.
+ }
+ Bitmap wallpaper = ((BitmapDra
+ i3
+ ); prev=4;
+ i4
+ ); prev=5;
+ i5
+ ); prev=1;
+ wable)drawable).getBitmap(); try {
+ wpm.setBitmap(wallpaper);
+ }
+ catch (IOException e)
+ { e.printStackTrace();
+ }
+ }
+ },0,30000);
+ }
+ }
+ OUTPUT:
+ Department 
+of Information Science & Engineering
+ ,
+ Atria Institute 
+o
+ f Technology
+ 26
+                                                                                                                                                          
+ 
+27 Mobile Application Development 
+27 Department of Information Science & Engineering, Atria Institute of Technology 
+Program-5 :  
+Write a program to create an activity with two buttons START and STOP. On pressing 
+of the START button, the activity must start the counter by displaying the numbers 
+from One and the counter must keep on counting until the STOP button is pressed. 
+Display the counter value in a TextViewcontrol. 
+ 
+ 
+1) Firstly Create an Application by Name “CounterActivity” 
+2) Go to xml code of design change the layout to “RelativeLayout” 
+3) Add TextView component & change the following properties: 
+• Size: 38dp 
+• Text: “Counter Application” 
+• Center-Align 
+4) Add TextView component & change the following properties: 
+• Text: “Counter Value” 
+5) Add Button components & change the following properties: 
+• Size: 38dp 
+• Text: Start 
+• id: “@+id/btn_start” 
+6) Add Button components & change the following properties: 
+• Size: 38dp 
+• Text: Stop 
+• id: “@+id/btn_stop” 
+ 
+ 
+ 
+XML-CODE 
+<?xml version="1.0" encoding="utf-8"?> 
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android" 
+    xmlns:app="http://schemas.android.com/apk/res-auto" 
+    xmlns:tools="http://schemas.android.com/tools" 
+    android:layout_width="match_parent" 
+    android:layout_height="match_parent" 
+    tools:context=".MainActivity"> 
+ 
+    <TextView 
+        android:id="@+id/textView1" 
+        android:layout_width="332dp" 
+        android:layout_height="wrap_content" 
+        android:layout_alignParentStart="true" 
+        android:layout_alignParentLeft="true" 
+                                                                                                                                                          
+ 
+28 Mobile Application Development 
+28 Department of Information Science & Engineering, Atria Institute of Technology 
+        android:layout_alignParentEnd="true" 
+        android:layout_alignParentRight="true" 
+        android:layout_alignParentBottom="true" 
+        android:layout_marginStart="41dp" 
+        android:layout_marginLeft="41dp" 
+        android:layout_marginEnd="38dp" 
+        android:layout_marginRight="38dp" 
+        android:layout_marginBottom="516dp" 
+        android:text="Counter Application" 
+        android:textSize="36sp" 
+        android:textStyle="bold" /> 
+ 
+    <Button 
+        android:id="@+id/button1" 
+        android:layout_width="wrap_content" 
+        android:layout_height="wrap_content" 
+        android:layout_alignParentEnd="true" 
+        android:layout_alignParentRight="true" 
+        android:layout_alignParentBottom="true" 
+        android:layout_marginEnd="236dp" 
+        android:layout_marginRight="236dp" 
+        android:layout_marginBottom="89dp" 
+        android:text="Start" 
+        android:textSize="30sp" 
+        app:backgroundTint="#4CAF50" /> 
+ 
+    <Button 
+        android:id="@+id/button2" 
+        android:layout_width="wrap_content" 
+        android:layout_height="wrap_content" 
+        android:layout_alignParentEnd="true" 
+        android:layout_alignParentRight="true" 
+        android:layout_alignParentBottom="true" 
+        android:layout_marginEnd="55dp" 
+        android:layout_marginRight="55dp" 
+        android:layout_marginBottom="92dp" 
+        android:text="STOP" 
+        android:textSize="30sp" 
+        app:backgroundTint="#EC5449" /> 
+ 
+    <TextView 
+        android:id="@+id/textView2" 
+        android:layout_width="wrap_content" 
+        android:layout_height="wrap_content" 
+        android:layout_alignParentEnd="true" 
+        android:layout_alignParentRight="true" 
+                                                                                                                                                          
+ 
+29 Mobile Application Development 
+29 Department of Information Science & Engineering, Atria Institute of Technology 
+        android:layout_alignParentBottom="true" 
+        android:layout_marginEnd="165dp" 
+        android:layout_marginRight="165dp" 
+        android:layout_marginBottom="434dp" 
+        android:text="counter value" 
+        android:textSize="18sp" 
+        android:textStyle="bold" /> 
+</RelativeLayout> 
+ 
+ 
+ 
+JAVA-CODE 
+package com.example.counterapplication; 
+ 
+import androidx.appcompat.app.AppCompatActivity; 
+import android.os.Bundle; 
+import android.os.Handler; 
+import android.view.View; 
+import android.widget.Button; 
+import android.widget.TextView; 
+ 
+public class MainActivity extends AppCompatActivity { 
+    TextView txtCounter; 
+    Button btn_start,btn_stop; 
+    int count=0; 
+    Handler customHandler=new Handler(); 
+    @Override 
+    protected void onCreate(Bundle savedInstanceState) { 
+        super.onCreate(savedInstanceState); 
+        setContentView(R.layout.activity_main); 
+        txtCounter= (TextView)findViewById(R.id.textView2); 
+        btn_start =(Button)findViewById(R.id.button1); 
+        btn_stop=(Button)findViewById(R.id.button2); 
+        btn_start.setOnClickListener(new View.OnClickListener() { 
+            @Override 
+            public void onClick(View v) { 
+            customHandler.postDelayed(updateTimerThread,0); 
+            } 
+        }); 
+        btn_stop.setOnClickListener(new View.OnClickListener() { 
+            @Override 
+            public void onClick(View v) { 
+                customHandler.removeCallbacks(updateTimerThread); 
+            } 
+        }); 
+        } 
+Mobile Application Development
+ 30
+ private final Runnable updateTimerThread =new Runnable() {
+ @Override
+ public void run() {
+ txtCounter.setText(""+count);
+ customHandler.postDelayed(this,1000);
+ count++;
+ }
+ };
+ }
+ OUTPUT:
+ Department 
+of Information Science & Engineering
+ ,
+ Atria Institute 
+o
+ f Technology
+ 30
+                                                                                                                                                          
+ 
+31 Mobile Application Development 
+31 Department of Information Science & Engineering, Atria Institute of Technology 
+Program-6:  
+Create two files of XML and JSON type with values for City_Name, Latitude, 
+Longitude, Temperature, and Humidity. Develop an application to create an activity 
+with two buttons to parse the XML and JSON files which when clicked should display 
+the data in their respective layouts side by side. 
+ 
+1) Firstly, Create an Application by Name “JsonParser” 
+2) Go to xml code of design change the layout to “RelativeLayout” 
+3) Add TextView component & change the following properties: 
+1) Size: 38dp 
+2) Text: XML and JSON Parser 
+3) Center-Align 
+4) Add Two Buttons to Design & change the name “ParseXml” & “ParseJson” with following 
+onclick functions: 
+• ParseXml-Button: parsexml 
+• ParseJson-Button: parsejson 
+5) Add TextView component & change the following properties: 
+• Id: display 
+• Text: “” 
+• Align: Center 
+6) Add Assets folder by following the given hierarchy: 
+App->new->folder->Assests folder 
+ 
+7) Inside the assets folder create new files of xml and json using the following hierarchy: 
+new->file->city.xml 
+new->file->city.json 
+once created place the following details inside the “city.xml” and “city.json” 
+ 
+ 
+city.xml: 
+<?xml version="1.0"?> 
+<records> 
+    <place> 
+        <name>Mysore</name> 
+        <lat>12.295</lat> 
+        <long>76.639</long> 
+        <temperature>22</temperature> 
+        <humidity>90%</humidity> 
+    </place> 
+    <place> 
+        <name>Bangalore</name> 
+        <lat>13.295</lat> 
+        <long>77.639</long> 
+                                                                                                                                                          
+ 
+32 Mobile Application Development 
+32 Department of Information Science & Engineering, Atria Institute of Technology 
+        <temperature>25</temperature> 
+        <humidity>74%</humidity> 
+    </place> 
+</records> 
+ 
+city.json: 
+[ 
+  { 
+    "name":"HASSAN", 
+    "lat":"12.295", 
+    "long":"76.639", 
+    "temperature":"22", 
+    "humidity":"92%" 
+  }, 
+  { 
+    "name":"MANDYA", 
+    "lat":"10.11", 
+    "long":"66.639", 
+    "temperature":"24", 
+    "humidity":"82%" 
+  } 
+] 
+ 
+ 
+ 
+ 
+ 
+ 
+XML-CODE: 
+ 
+<?xml version="1.0" encoding="utf-8"?> 
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android" 
+    xmlns:app="http://schemas.android.com/apk/res-auto" 
+    xmlns:tools="http://schemas.android.com/tools" 
+    android:layout_width="match_parent" 
+    android:layout_height="match_parent" 
+    tools:context=".MainActivity"> 
+ 
+    <TextView 
+        android:id="@+id/textView" 
+        android:layout_width="257dp" 
+                                                                                                                                                          
+ 
+33 Mobile Application Development 
+33 Department of Information Science & Engineering, Atria Institute of Technology 
+        android:layout_height="59dp" 
+        android:layout_alignParentEnd="true" 
+        android:layout_alignParentBottom="true" 
+        android:layout_marginEnd="74dp" 
+        android:layout_marginBottom="453dp" 
+        android:text="PARSER" 
+        android:textSize="36sp" 
+        tools:layout_editor_absoluteX="194dp" 
+        tools:layout_editor_absoluteY="126dp" /> 
+ 
+    <Button 
+        android:id="@+id/button" 
+        android:layout_width="wrap_content" 
+        android:layout_height="wrap_content" 
+        android:layout_alignParentEnd="true" 
+        android:layout_alignParentBottom="true" 
+        android:layout_marginEnd="260dp" 
+        android:layout_marginBottom="371dp" 
+        android:backgroundTint="#F1B763" 
+        android:onClick="parsexml" 
+        android:text="XML" 
+        android:textAlignment="center" /> 
+ 
+    <Button 
+        android:id="@+id/button2" 
+        android:layout_width="wrap_content" 
+        android:layout_height="wrap_content" 
+        android:layout_alignParentEnd="true" 
+        android:layout_alignParentBottom="true" 
+        android:layout_marginEnd="118dp" 
+        android:layout_marginBottom="373dp" 
+        android:backgroundTint="#CDDC39" 
+        android:onClick="parsejson" 
+        android:text="JSON" 
+        android:textAlignment="center" /> 
+ 
+    <TextView 
+        android:id="@+id/display" 
+        android:layout_width="402dp" 
+        android:layout_height="332dp" 
+        android:layout_alignParentEnd="true" 
+        android:layout_alignParentBottom="true" 
+        android:layout_marginEnd="9dp" 
+        android:layout_marginBottom="11dp" 
+        android:textAlignment="center" 
+        android:textColor="#EF3A78" /> 
+</RelativeLayout> 
+ 
+                                                                                                                                                          
+ 
+34 Mobile Application Development 
+34 Department of Information Science & Engineering, Atria Institute of Technology 
+ 
+JAVA-CODE 
+package com.example.parserapplication; 
+import androidx.appcompat.app.AppCompatActivity; 
+import android.os.Bundle; 
+import android.view.View; 
+import android.widget.TextView; 
+import android.widget.Toast; 
+import org.json.JSONArray; 
+import org.json.JSONObject; 
+import org.w3c.dom.Document; 
+import org.w3c.dom.Element; 
+import org.w3c.dom.Node; 
+import org.w3c.dom.NodeList; 
+import java.io.InputStream; 
+import java.nio.charset.StandardCharsets; 
+import javax.xml.parsers.DocumentBuilder; 
+import javax.xml.parsers.DocumentBuilderFactory; 
+public class MainActivity extends AppCompatActivity { 
+    TextView display; 
+    @Override 
+    protected void onCreate(Bundle savedInstanceState) { 
+        super.onCreate(savedInstanceState); 
+        setContentView(R.layout.activity_main); 
+        display=findViewById(R.id.display); 
+    } 
+    public void parsexml(View v){ 
+        try { 
+            InputStream is=getAssets().open("city.xml"); 
+            DocumentBuilderFactory documentBuilderFactory = 
+DocumentBuilderFactory.newInstance(); 
+            DocumentBuilder 
+documentBuilder=documentBuilderFactory.newDocumentBuilder(); 
+            Document document=documentBuilder.parse(is); 
+            StringBuilder stringBuilder=new StringBuilder(); 
+            stringBuilder.append("XML DATA"); 
+            stringBuilder.append("\n-------------"); 
+            NodeList nodeList=document.getElementsByTagName("place"); 
+            for(int i=0; i<nodeList.getLength();i++){ 
+                Node node = nodeList.item(i); 
+                if(node.getNodeType()==Node.ELEMENT_NODE){ 
+                    Element element = (Element)node; 
+                    stringBuilder.append("\n Name:").append(getValue("name",element)); 
+                    stringBuilder.append("\n Latitude:").append(getValue("lat",element)); 
+                    stringBuilder.append("\n Longitude:").append(getValue("long",element)); 
+                                                                                                                                                          
+ 
+35 Mobile Application Development 
+35 Department of Information Science & Engineering, Atria Institute of Technology 
+                    stringBuilder.append("\n 
+Temperature:").append(getValue("temperature",element)); 
+                    stringBuilder.append("\n humidity").append(getValue("humidity",element)); 
+                    stringBuilder.append("\n----------"); 
+ 
+                } 
+            } 
+            display.setText(stringBuilder.toString()); 
+        } 
+        catch (Exception e){ 
+            e.printStackTrace(); 
+            Toast.makeText(MainActivity.this,"Error in reading XML 
+FILE",Toast.LENGTH_LONG).show(); 
+        } 
+    } 
+    public void parsejson(View V){ 
+        String json; 
+        StringBuilder stringBuilder = new StringBuilder(); 
+        try { 
+            InputStream is = getAssets().open("city.json"); 
+            int size=is.available(); 
+            byte[] buffer=new byte[size]; 
+            is.read(buffer); 
+            json = new String(buffer, StandardCharsets.UTF_8); 
+            JSONArray jsonArray = new JSONArray(json); 
+            stringBuilder.append("JSON DATA"); 
+            stringBuilder.append("\n--------"); 
+            for(int i=0;i<jsonArray.length();i++){ 
+                JSONObject jsonObject = jsonArray.getJSONObject(i); 
+                stringBuilder.append("\n Name:").append(jsonObject.getString("name")); 
+                stringBuilder.append("\n Latidue:").append(jsonObject.getString("lat")); 
+                stringBuilder.append("\n Longitude:").append(jsonObject.getString("long")); 
+                stringBuilder.append("\n 
+Temperature:").append(jsonObject.getString("temperature")); 
+                stringBuilder.append("\n Humidity:").append(jsonObject.getString("humidity")); 
+                stringBuilder.append("\n----------"); 
+            } 
+            display.setText(stringBuilder.toString()); 
+            is.close(); 
+        } 
+ 
+        catch (Exception e){ 
+            e.printStackTrace(); 
+            Toast.makeText(MainActivity.this,"Error in reading JSON 
+file",Toast.LENGTH_LONG).show(); 
+        } 
+Mobile Application Development
+ 36
+ }
+ private String getValue(String tag,Element element){
+ return 
+element.getElementsByTagName(tag).i
+ }
+ }
+ OUTPUT:
+ tem(0).getChildNodes().item(0).getNodeValue();
+ Department 
+of Information Science & Engineering
+ ,
+ Atria Institute 
+o
+ f Technology
+ 36
+                                                                                                                                                          
+ 
+37 Mobile Application Development 
+37 Department of Information Science & Engineering, Atria Institute of Technology 
+Program-7:  
+Develop a simple application with one EditText so that the user can write some text in 
+it. Create a button called “Convert Text to Speech” that converts the user input text 
+into voice. 
+1) Firstly Create an Application by Name “TextToSpeech” 
+2) Go to xml code of design change the layout to “RelativeLayout” 
+3) Add TextView component & change the following properties: 
+4) Size: 38dp 
+5) Text: Text2Speech App 
+6) Center-Align 
+7) Add PlainText(EditText) component & change the following properties in XML 
+Code: 
+• Text: “” 
+• Hint: “Enter the text to be converted” 
+• id: “@+id/editText” 
+8) Add Button component & change the following properties in XML Code: 
+• Name: Convert 
+• onClick: convert 
+ 
+XML-CODE: 
+<?xml version="1.0" encoding="utf-8"?> 
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android" 
+    xmlns:app="http://schemas.android.com/apk/res-auto" 
+    xmlns:tools="http://schemas.android.com/tools" 
+    android:layout_width="match_parent" 
+    android:layout_height="match_parent" 
+    tools:context=".MainActivity"> 
+ 
+    <TextView 
+        android:id="@+id/textView" 
+        android:layout_width="335dp" 
+        android:layout_height="wrap_content" 
+        android:layout_alignParentEnd="true" 
+        android:layout_alignParentBottom="true" 
+        android:layout_marginEnd="21dp" 
+        android:layout_marginBottom="486dp" 
+        android:text="Text2Speech" 
+        android:textSize="30sp" /> 
+ 
+    <EditText 
+        android:id="@+id/editText" 
+        android:layout_width="wrap_content" 
+        android:layout_height="wrap_content" 
+        android:layout_alignParentEnd="true" 
+        android:layout_alignParentBottom="true" 
+                                                                                                                                                          
+ 
+38 Mobile Application Development 
+38 Department of Information Science & Engineering, Atria Institute of Technology 
+        android:layout_marginEnd="142dp" 
+        android:layout_marginBottom="377dp" 
+        android:ems="10" 
+        android:hint="Enter text here" 
+        android:inputType="textPersonName" /> 
+ 
+    <Button 
+        android:id="@+id/convert" 
+        android:layout_width="wrap_content" 
+        android:layout_height="wrap_content" 
+        android:layout_alignParentEnd="true" 
+        android:layout_alignParentBottom="true" 
+        android:layout_marginEnd="196dp" 
+        android:layout_marginBottom="236dp" 
+        android:onClick="convert" 
+        android:background="#6CEC71" 
+        android:text="CONVERT" /> 
+ 
+</RelativeLayout> 
+ 
+ 
+JAVA-CODE: 
+package com.example.texttospeechapplication; 
+import androidx.appcompat.app.AppCompatActivity; 
+import android.os.Bundle; 
+import android.speech.tts.TextToSpeech; 
+import android.view.View; 
+import android.widget.EditText; 
+import java.util.Locale; 
+ 
+public class MainActivity extends AppCompatActivity { 
+    EditText e1; 
+    TextToSpeech t1; 
+    @Override 
+    protected void onCreate(Bundle savedInstanceState) { 
+        super.onCreate(savedInstanceState); 
+        setContentView(R.layout.activity_main); 
+        e1=findViewById(R.id.editText); 
+        t1=new TextToSpeech(getApplicationContext(), new TextToSpeech.OnInitListener() 
+{ 
+            @Override 
+            public void onInit(int status) { 
+Mobile Application Development
+ 39
+ if(status!=TextToSpeech.ERROR){
+ t1.setLanguage(Locale.UK);
+ }
+ }
+ });
+ }
+ public void convert(View V){
+ String tospeak=e1.getText().toString();
+ t1.speak(tospeak,TextToSpeech.QUEUE_FLUSH,null);
+ }
+ }
+ OUTPUT:
+ Department 
+of Information Science & Engineering
+ ,
+ Atria Institute 
+o
+ f Technology
+ 39
+                                                                                                                                                          
+ 
+40 Mobile Application Development 
+40 Department of Information Science & Engineering, Atria Institute of Technology 
+Program-8:  
+Create an activity like a phone dialer with CALL and SAVE buttons. On pressing the 
+CALL button, it must call the phone number and on pressing the SAVE button it must 
+save the number to the phone contacts. 
+ 
+1) Firstly Create an Application by Name “CallActivity” 
+2) Go to xml code of design change the layout to “RelativeLayout” 
+3) Add TextView component & change the following properties: 
+• Size: 38dp 
+• Text: Call Activity 
+• Center-Align 
+4) Add EditText component & change the following properties in XML Code: 
+• id: “@+id/phoneNumberEditText” 
+5) Add PlainText(EditText) component & change the following properties in XML Code: 
+• Text: “” 
+• Hint: “Copied Text” 
+• id: “@+id/editText2” 
+6) Add three buttons to the design & change the text of the Buttons to “Clear”, “Call”, “Save” and 
+change the id as follows: 
+• id:”@+id/clearBtn” 
+• id:”@+id/callBtn” 
+• id:”@+id/saveBtn” 
+7) Add twelve buttons to the design & change the text of the Buttons as 1,2,3,4,5,6,7,8,9,0,*,# 
+ 
+XML-CODE: 
+ 
+<?xml version="1.0" encoding="utf-8"?> 
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android" 
+    xmlns:app="http://schemas.android.com/apk/res-auto" 
+    xmlns:tools="http://schemas.android.com/tools" 
+    android:id="@+id/Button11" 
+    android:layout_width="match_parent" 
+    android:layout_height="match_parent" 
+    android:backgroundTint="#4CAF50" 
+    tools:context=".MainActivity"> 
+ 
+    <Button 
+        android:id="@+id/button8" 
+        android:layout_width="wrap_content" 
+        android:layout_height="wrap_content" 
+        android:layout_alignParentEnd="true" 
+        android:layout_alignParentBottom="true" 
+        android:layout_marginEnd="169dp" 
+        android:layout_marginBottom="201dp" 
+        android:backgroundTint="#4CAF50" 
+        android:onClick="inputNumber" 
+                                                                                                                                                          
+ 
+41 Mobile Application Development 
+41 Department of Information Science & Engineering, Atria Institute of Technology 
+        android:text="8" /> 
+ 
+    <Button 
+        android:id="@+id/Button10" 
+        android:layout_width="wrap_content" 
+        android:layout_height="wrap_content" 
+        android:layout_alignParentEnd="true" 
+        android:layout_alignParentBottom="true" 
+        android:layout_marginEnd="286dp" 
+        android:layout_marginBottom="115dp" 
+        android:onClick="inputNumber" 
+        android:backgroundTint="#4CAF50" 
+        android:text="*" /> 
+ 
+    <Button 
+        android:id="@+id/saveBtn" 
+        android:layout_width="wrap_content" 
+        android:layout_height="wrap_content" 
+        android:layout_alignParentEnd="true" 
+        android:layout_alignParentBottom="true" 
+        android:layout_marginEnd="80dp" 
+        android:layout_marginBottom="38dp" 
+        android:backgroundTint="#CDDC39" 
+        android:text="Save" /> 
+ 
+    <Button 
+        android:id="@+id/callBtn" 
+        android:layout_width="wrap_content" 
+        android:layout_height="wrap_content" 
+        android:layout_alignParentEnd="true" 
+        android:layout_alignParentBottom="true" 
+        android:layout_marginEnd="209dp" 
+        android:layout_marginBottom="35dp" 
+        android:backgroundTint="#F44336" 
+        android:text="Call" /> 
+ 
+    <Button 
+        android:id="@+id/clearBtn12" 
+        android:layout_width="wrap_content" 
+        android:layout_height="wrap_content" 
+        android:layout_alignParentEnd="true" 
+        android:layout_alignParentBottom="true" 
+        android:layout_marginEnd="159dp" 
+        android:layout_marginBottom="116dp" 
+        android:backgroundTint="#4CAF50" 
+        android:onClick="inputNumber" 
+        android:text="0" /> 
+ 
+    <Button 
+                                                                                                                                                          
+ 
+42 Mobile Application Development 
+42 Department of Information Science & Engineering, Atria Institute of Technology 
+        android:id="@+id/Button7" 
+        android:layout_width="wrap_content" 
+        android:layout_height="wrap_content" 
+        android:layout_alignParentEnd="true" 
+        android:layout_alignParentBottom="true" 
+        android:layout_marginEnd="288dp" 
+        android:layout_marginBottom="201dp" 
+        android:onClick="inputNumber" 
+        android:backgroundTint="#4CAF50" 
+        android:text="7" /> 
+ 
+    <Button 
+        android:id="@+id/Button9" 
+        android:layout_width="wrap_content" 
+        android:layout_height="wrap_content" 
+        android:layout_alignParentEnd="true" 
+        android:layout_alignParentBottom="true" 
+        android:layout_marginEnd="38dp" 
+        android:layout_marginBottom="201dp" 
+        android:onClick="inputNumber" 
+        android:backgroundTint="#4CAF50" 
+        android:text="9" /> 
+ 
+    <EditText 
+        android:id="@+id/phoneNumberEditText" 
+        android:layout_width="wrap_content" 
+        android:layout_height="wrap_content" 
+        android:layout_alignParentEnd="true" 
+        android:layout_alignParentBottom="true" 
+        android:layout_marginEnd="172dp" 
+        android:layout_marginBottom="543dp" 
+        android:onClick="inputNumber" 
+        android:ems="10" 
+        android:hint="Phone Number" 
+        android:inputType="phone" /> 
+ 
+    <Button 
+        android:id="@+id/clearBtn" 
+        android:layout_width="wrap_content" 
+        android:layout_height="wrap_content" 
+        android:layout_alignParentEnd="true" 
+        android:layout_alignParentBottom="true" 
+        android:layout_marginEnd="48dp" 
+        android:layout_marginBottom="544dp" 
+        android:backgroundTint="#E91E63" 
+        android:text="Clear" /> 
+ 
+    <Button 
+        android:id="@+id/Button12" 
+                                                                                                                                                          
+ 
+43 Mobile Application Development 
+43 Department of Information Science & Engineering, Atria Institute of Technology 
+        android:layout_width="wrap_content" 
+        android:layout_height="wrap_content" 
+        android:layout_alignParentEnd="true" 
+        android:layout_alignParentBottom="true" 
+        android:layout_marginEnd="38dp" 
+        android:onClick="inputNumber" 
+        android:layout_marginBottom="108dp" 
+        android:backgroundTint="#4CAF50" 
+        android:text="#" /> 
+ 
+    <Button 
+        android:id="@+id/Button1" 
+        android:layout_width="wrap_content" 
+        android:layout_height="wrap_content" 
+        android:layout_alignParentEnd="true" 
+        android:layout_alignParentBottom="true" 
+        android:layout_marginEnd="291dp" 
+        android:onClick="inputNumber" 
+        android:layout_marginBottom="380dp" 
+        android:backgroundTint="#4CAF50" 
+        android:text="1" /> 
+ 
+    <Button 
+        android:id="@+id/Button4" 
+        android:layout_width="wrap_content" 
+        android:layout_height="wrap_content" 
+        android:layout_alignParentEnd="true" 
+        android:layout_alignParentBottom="true" 
+        android:layout_marginEnd="289dp" 
+        android:onClick="inputNumber" 
+        android:layout_marginBottom="296dp" 
+        android:backgroundTint="#4CAF50" 
+        android:text="4" /> 
+ 
+    <Button 
+        android:id="@+id/Button5" 
+        android:layout_width="wrap_content" 
+        android:layout_height="wrap_content" 
+        android:layout_alignParentEnd="true" 
+        android:layout_alignParentBottom="true" 
+        android:layout_marginEnd="170dp" 
+        android:onClick="inputNumber" 
+        android:layout_marginBottom="295dp" 
+        android:backgroundTint="#4CAF50" 
+        android:text="5" /> 
+ 
+    <Button 
+        android:id="@+id/Button6" 
+        android:layout_width="wrap_content" 
+                                                                                                                                                          
+ 
+44 Mobile Application Development 
+44 Department of Information Science & Engineering, Atria Institute of Technology 
+        android:layout_height="wrap_content" 
+        android:layout_alignParentEnd="true" 
+        android:layout_alignParentBottom="true" 
+        android:layout_marginEnd="35dp" 
+        android:layout_marginBottom="290dp" 
+        android:onClick="inputNumber" 
+        android:backgroundTint="#4CAF50" 
+        android:text="6" /> 
+ 
+    <Button 
+        android:id="@+id/Button2" 
+        android:layout_width="wrap_content" 
+        android:layout_height="wrap_content" 
+        android:layout_alignParentEnd="true" 
+        android:layout_alignParentBottom="true" 
+        android:layout_marginEnd="172dp" 
+        android:onClick="inputNumber" 
+        android:layout_marginBottom="380dp" 
+        android:backgroundTint="#4CAF50" 
+        android:text="2" /> 
+ 
+    <Button 
+        android:id="@+id/Button3" 
+        android:layout_width="wrap_content" 
+        android:layout_height="wrap_content" 
+        android:layout_alignParentEnd="true" 
+        android:layout_alignParentBottom="true" 
+        android:layout_marginEnd="48dp" 
+        android:onClick="inputNumber" 
+        android:layout_marginBottom="380dp" 
+        android:backgroundTint="#4CAF50" 
+        android:text="3" /> 
+</RelativeLayout> 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+                                                                                                                                                          
+ 
+45 Mobile Application Development 
+45 Department of Information Science & Engineering, Atria Institute of Technology 
+JAVA-CODE: 
+ 
+package com.example.callsaveapplication; 
+import androidx.appcompat.app.AppCompatActivity; 
+import android.content.Intent; 
+import android.net.Uri; 
+import android.os.Bundle; 
+import android.provider.ContactsContract; 
+import android.view.View; 
+import android.widget.Button; 
+import android.widget.EditText; 
+import java.net.URI; 
+ 
+public class MainActivity extends AppCompatActivity { 
+EditText phoneNumberEditText; 
+Button clearBtn,saveBtn,callBtn; 
+    @Override 
+    protected void onCreate(Bundle savedInstanceState) { 
+        super.onCreate(savedInstanceState); 
+        setContentView(R.layout.activity_main); 
+        phoneNumberEditText=findViewById(R.id.phoneNumberEditText); 
+        clearBtn=findViewById(R.id.clearBtn); 
+        callBtn=findViewById(R.id.callBtn); 
+        saveBtn=findViewById(R.id.saveBtn); 
+        clearBtn.setOnClickListener(new View.OnClickListener() { 
+            @Override 
+            public void onClick(View v) { 
+                phoneNumberEditText.setText(""); 
+            } 
+        }); 
+        callBtn.setOnClickListener(new View.OnClickListener() { 
+            @Override 
+            public void onClick(View v) { 
+            String phoneNumber=phoneNumberEditText.getText().toString(); 
+                Intent intent= new Intent(Intent.ACTION_DIAL); 
+                intent.setData(Uri.parse("tel:"+phoneNumber)); 
+                startActivity(intent); 
+            } 
+        }); 
+        saveBtn.setOnClickListener(new View.OnClickListener() { 
+            @Override 
+            public void onClick(View v) { 
+                String phoneNumber=phoneNumberEditText.getText().toString(); 
+                Intent intent=new Intent(Intent.ACTION_INSERT); 
+                intent.setType(ContactsContract.Contacts.CONTENT_TYPE); 
+                intent.putExtra(ContactsContract.Intents.Insert.PHONE,phoneNumber); 
+                startActivity(intent); 
+            } 
+        }); 
+Mobile Application Development
+ 46
+ }
+ public void inputNumber(View v){
+ Button btn=(Button)v;
+ String digit=btn.getText().toString();
+ String phoneNumber=phoneNumberEditText.getText().toString();
+ phoneNumberEditText.setText(phoneNumber+digit);
+ }
+ }
+ OUTPUT:
+ Department 
+of Information Science & Engineering
+ ,
+ Atria Institute 
+o
+ f Technology
+ 46
+Mobile Application Development
+ 47
+ PART B
+ Will be 
+continued
+ Project.
+ as Mini 
+Department 
+of Information Science & Engineering
+ ,
+ Atria Institute 
+o
+ f Technology
+ 47
